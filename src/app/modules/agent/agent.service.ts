@@ -106,8 +106,9 @@ const deleteAgent = async (id: string) => {
   return result;
 };
 
-const updatedStatus = async (id: string, payload: Partial<IAgent>) => {
-  const result = await Agent.findByIdAndUpdate(id, payload, { new: true });
+const updatedStatus = async (id: string, status: IAgent['status']) => {
+  const result = await Agent.findByIdAndUpdate(id, { status }, { new: true });
+
   if (!result) throw new AppError(404, 'Agent not found');
 
   return result;
@@ -119,5 +120,5 @@ export const agentService = {
   getSingleAgent,
   updatedAgent,
   deleteAgent,
-  updatedStatus
+  updatedStatus,
 };
