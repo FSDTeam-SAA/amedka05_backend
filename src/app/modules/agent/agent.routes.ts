@@ -9,4 +9,8 @@ router.post(
   agentController.requestAgent,
 );
 
+router.get('/', agentController.getAllAgent);
+
+router.get('/:id', agentController.getSingleAgent);
+
 export const agentRouter = router;

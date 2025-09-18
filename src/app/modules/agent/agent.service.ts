@@ -1,11 +1,12 @@
 import AppError from '../../error/appError';
 import { fileUploader } from '../../helper/fileUploder';
+import pagination, { IOption } from '../../helper/pagenation';
 import { IAgent } from './agent.interface';
 import Agent from './agent.model';
 
 const requestAgent = async (payload: IAgent, file?: Express.Multer.File) => {
   const agent = await Agent.findOne({ email: payload.email });
-  if (agent) throw new AppError(404, 'Agent alrady created');
+  if (agent) throw new AppError(409, 'Agent already created');
 
   if (file) {
     const agentImage = await fileUploader.uploadToCloudinary(file);
@@ -16,11 +17,76 @@ const requestAgent = async (payload: IAgent, file?: Express.Multer.File) => {
   }
 
   const result = await Agent.create(payload);
-  if (!result) throw new AppError(404, 'Agent not created');
+  if (!result) throw new AppError(400, 'Agent not created');
+
+  return result;
+};
+
+const getAllAgent = async (params: any, options: IOption) => {
+  const { page, limit, skip, sortBy, sortOrder } = pagination(options);
+
+  const { searchTerm, ...filterData } = params;
+
+  const searchableFields = [
+    'fullName',
+    'phoneNumber',
+    'email',
+    'country',
+    'designation',
+    'brandName',
+    'workingFrom',
+    'status',
+  ];
+
+  const andCondition: any[] = [];
+
+  // search filter
+  if (searchTerm) {
+    andCondition.push({
+      $or: searchableFields.map((field) => ({
+        [field]: { $regex: searchTerm, $options: 'i' },
+      })),
+    });
+  }
+
+  // exact field filter
+  if (Object.keys(filterData).length > 0) {
+    andCondition.push({
+      $and: Object.entries(filterData).map(([field, value]) => ({
+        [field]: value,
+      })),
+    });
+  }
+
+  const whereConditions = andCondition.length > 0 ? { $and: andCondition } : {};
+
+  const result = await Agent.find(whereConditions)
+    .skip(skip)
+    .limit(limit)
+    .sort({ [sortBy]: sortOrder } as any);
+
+  const total = await Agent.countDocuments(whereConditions);
+
+  return {
+    meta: {
+      page,
+      limit,
+      total,
+    },
+    data: result,
+  };
+};
+
+
+const getSingleAgent = async (id: string) => {
+  const result = await Agent.findById(id);
+  if (!result) throw new AppError(404, 'Agent not found');
 
   return result;
 };
 
 export const agentService = {
   requestAgent,
+  getAllAgent,
+  getSingleAgent,
 };

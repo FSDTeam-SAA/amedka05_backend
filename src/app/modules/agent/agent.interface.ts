@@ -6,5 +6,6 @@ export interface IAgent {
   designation?: string;
   brandName?: string;
   workingFrom?: string;
+  status?: 'accepted' | 'rejected' | 'pending';
   image?: string;
 }
