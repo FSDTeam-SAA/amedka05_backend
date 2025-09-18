@@ -81,6 +81,7 @@ const deleteAgent = catchAsync(async (req, res) => {
 const updatedStatus = catchAsync(async (req, res) => {
   const { id } = req.params;
   const { status } = req.body;
+
   const result = await agentService.updatedStatus(id, status);
 
   sendResponse(res, {
@@ -97,5 +98,5 @@ export const agentController = {
   getSingleAgent,
   updatedAgent,
   deleteAgent,
-  updatedStatus
+  updatedStatus,
 };
