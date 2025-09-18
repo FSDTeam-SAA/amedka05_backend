@@ -10,6 +10,11 @@ const agentSchema = new mongoose.Schema<IAgent>(
     designation: { type: String },
     brandName: { type: String },
     workingFrom: { type: String },
+    status: {
+      type: String,
+      enum: ['accepted', 'rejected', 'pending'],
+      default: 'pending',
+    },
     image: { type: String },
   },
   { timestamps: true },
