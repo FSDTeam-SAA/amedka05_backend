@@ -4,7 +4,7 @@ const sendResponse = <T>(
   res: Response,
   jsonData: {
     statusCode: number;
-    success: true;
+    success: boolean;
     message: string;
     meta?: { total: number; page: number; limit: number };
     data?: T;
@@ -14,12 +14,9 @@ const sendResponse = <T>(
     statusCode: jsonData.statusCode,
     success: jsonData.success,
     message: jsonData.message,
-    data: jsonData.data,
+    meta: jsonData.meta || undefined,
+    data: jsonData.data || undefined,
   };
-
-  if (jsonData.meta) {
-    responseBody.meta = jsonData.meta;
-  }
 
   res.status(jsonData.statusCode).json(responseBody);
 };

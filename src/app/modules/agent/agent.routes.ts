@@ -9,8 +9,19 @@ router.post(
   agentController.requestAgent,
 );
 
+// only admin access this route
+router.patch('/status/:id', agentController.updatedStatus);
+
 router.get('/', agentController.getAllAgent);
 
 router.get('/:id', agentController.getSingleAgent);
+
+router.put(
+  '/:id',
+  fileUploader.upload.single('image'),
+  agentController.updatedAgent,
+);
+
+router.delete('/:id', agentController.deleteAgent);
 
 export const agentRouter = router;

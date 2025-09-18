@@ -77,9 +77,37 @@ const getAllAgent = async (params: any, options: IOption) => {
   };
 };
 
-
 const getSingleAgent = async (id: string) => {
   const result = await Agent.findById(id);
+  if (!result) throw new AppError(404, 'Agent not found');
+
+  return result;
+};
+
+const updatedAgent = async (
+  id: string,
+  payload: Partial<IAgent>,
+  file?: Express.Multer.File,
+) => {
+  if (file) {
+    const agentImage = await fileUploader.uploadToCloudinary(file);
+    payload.image = agentImage.secure_url;
+  }
+  const result = await Agent.findByIdAndUpdate(id, payload, { new: true });
+  if (!result) throw new AppError(404, 'Agent not found');
+
+  return result;
+};
+
+const deleteAgent = async (id: string) => {
+  const result = await Agent.findByIdAndDelete(id);
+  if (!result) throw new AppError(404, 'Agent not found');
+
+  return result;
+};
+
+const updatedStatus = async (id: string, payload: Partial<IAgent>) => {
+  const result = await Agent.findByIdAndUpdate(id, payload, { new: true });
   if (!result) throw new AppError(404, 'Agent not found');
 
   return result;
@@ -89,4 +117,7 @@ export const agentService = {
   requestAgent,
   getAllAgent,
   getSingleAgent,
+  updatedAgent,
+  deleteAgent,
+  updatedStatus
 };
