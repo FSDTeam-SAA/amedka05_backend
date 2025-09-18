@@ -9,4 +9,16 @@ router.post(
   creatorController.requestCreator,
 );
 
+// only admin access this route
+router.patch('/status/:id', creatorController.updatedStatus);
+
+router.get('/', creatorController.getAllCreators);
+router.get('/:id', creatorController.singleCreator);
+router.put(
+  '/:id',
+  fileUploader.upload.array('image'),
+  creatorController.updatedCreator,
+);
+router.delete('/:id', creatorController.deleteCreator);
+
 export const creatorRouter = router;
