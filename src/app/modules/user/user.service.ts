@@ -8,11 +8,13 @@ import { IUser } from './user.interface';
 import User from './user.model';
 
 const createUser = async (payload: IUser) => {
+  const idx = Math.floor(Math.random() * 100) + 1;
+  payload.profileImage = `https://avatar.iran.liara.run/public/${idx}.png`;
   const result = await User.create(payload);
   await sendMailer(
     payload.email,
-    payload.name,
-    createOtpTemplate(payload.name, payload.email, 'created successfully'),
+    payload.firstName,
+    createOtpTemplate(payload.firstName, payload.email, 'created successfully'),
   );
   return result;
 };
@@ -22,7 +24,16 @@ const getAllUser = async (params: any, options: IOption) => {
   const { searchTerm, ...filterData } = params;
 
   const andCondition: any[] = [];
-  const userSearchableFields = ['name', 'email', 'role'];
+  const userSearchableFields = [
+    'firstName',
+    'lastName',
+    'email',
+    'role',
+    'jobTitle',
+    'bio',
+    'location',
+    'phoneNumber',
+  ];
 
   if (searchTerm) {
     andCondition.push({
