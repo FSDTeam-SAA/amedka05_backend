@@ -1,4 +1,3 @@
-
 import { JwtPayload, Secret } from 'jsonwebtoken';
 import config from '../../config';
 import AppError from '../../error/appError';
@@ -10,10 +9,14 @@ import sendMailer from '../../helper/sendMailer';
 import bcrypt from 'bcryptjs';
 import createOtpTemplate from '../../utils/createOtpTemplate';
 
-
 const registerUser = async (payload: Partial<IUser>) => {
   const exist = await User.findOne({ email: payload.email });
   if (exist) throw new AppError(400, 'User already exists');
+
+
+  const idx = Math.floor(Math.random() * 100) + 1;
+  payload.profileImage = `https://avatar.iran.liara.run/public/${idx}.png`;
+
 
   const user = await User.create({
     ...payload,
@@ -47,7 +50,7 @@ const loginUser = async (payload: Partial<IUser>) => {
     config.jwt.refreshTokenExpires,
   );
 
-  const { password: _ , ...userWithoutPassword } = user.toObject();
+  const { password, ...userWithoutPassword } = user.toObject();
   return { accessToken, refreshToken, user: userWithoutPassword };
 };
 
@@ -80,7 +83,7 @@ const forgotPassword = async (email: string) => {
 
   await sendMailer(
     user.email,
-    user.name,
+    user.firstName,
     createOtpTemplate(otp, user.email, 'Your Company'),
   );
 
@@ -92,7 +95,7 @@ const resetPassword = async (
   otp: string,
   newPassword: string,
 ) => {
-  const user = await User.findOne({ email }).select("-password");
+  const user = await User.findOne({ email }).select('-password');
   if (!user) throw new AppError(404, 'User not found');
 
   if (user.otp !== otp || !user.otpExpiry || user.otpExpiry < new Date()) {

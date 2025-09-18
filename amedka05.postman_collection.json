@@ -1,0 +1,1692 @@
+{
+	"info": {
+		"_postman_id": "e360b2ca-384e-41b0-bd2e-876e3aee4009",
+		"name": "amedka05",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47772245",
+		"_collection_link": "https://saurav-bdcalling-1079490.postman.co/workspace/Personal-Workspace~76dd43f1-08f8-4c89-9afb-1b5703058cef/collection/47772245-e360b2ca-384e-41b0-bd2e-876e3aee4009?action=share&source=collection_link&creator=47772245"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Y2JlZTExMzQ0ZTE2MTNmNjhlZTAyNCIsInJvbGUiOiJ1c2VyIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTgxOTUzMTcsImV4cCI6MTc2NTk3MTMxN30.6nz_kssyJiaCv9IjQF5BW4mw-Aj-IprQrOTT4TI16FY; Path=/; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "608"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"260-cJ78b77ADuyq2hTJk6UkIprtUAE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 11:35:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Y2JlZTExMzQ0ZTE2MTNmNjhlZTAyNCIsInJvbGUiOiJ1c2VyIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTgxOTUzMTcsImV4cCI6MTc1ODgwMDExN30.qITXrDmPz8RDNv4IBjVKcwfg_lb0ErfxZ7wAUm23Plk\",\n        \"user\": {\n            \"_id\": \"68cbee11344e1613f68ee024\",\n            \"firstName\": \"Jack\",\n            \"lastName\": \"Maxxill\",\n            \"email\": \"admin@gmail.com\",\n            \"role\": \"user\",\n            \"profileImage\": \"https://avatar.iran.liara.run/public/43.png\",\n            \"verified\": true,\n            \"createdAt\": \"2025-09-18T11:33:37.440Z\",\n            \"updatedAt\": \"2025-09-18T11:33:37.440Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"saurav.bdcalling@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/forgot-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/verify-email",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"verify-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/change-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jack\",\r\n    \"lastName\": \"Maxxill\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Jack\",\r\n    \"lastName\": \"Maxxill\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "460"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1cc-+RCOA7nVrcLmeA+Xuai0VaN2z1c\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 11:33:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"User registered successfully. Please verify your email.\",\n    \"data\": {\n        \"firstName\": \"Jack\",\n        \"lastName\": \"Maxxill\",\n        \"email\": \"admin@gmail.com\",\n        \"password\": \"$2b$10$L63CEkawfaKainHD5uoc0O5VRjGhEj0pVQynd8x/UffGyt8EhlrpW\",\n        \"role\": \"user\",\n        \"profileImage\": \"https://avatar.iran.liara.run/public/43.png\",\n        \"verified\": true,\n        \"_id\": \"68cbee11344e1613f68ee024\",\n        \"createdAt\": \"2025-09-18T11:33:37.440Z\",\n        \"updatedAt\": \"2025-09-18T11:33:37.440Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "setting",
+			"item": [
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "password",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contact",
+			"item": [
+				{
+					"name": "create contacts",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "all contact",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "accpet or reject",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "single contact",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "even",
+			"item": [
+				{
+					"name": "upload video or create even",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "all even",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "single even",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleted even",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update even",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trip",
+			"item": [
+				{
+					"name": "create net trip",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "all trips",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "single trip",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update trip",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete trip",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "analytics trips",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "agent",
+			"item": [
+				{
+					"name": "request agent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/sarka/Downloads/pexels-wolrider-18380066.jpg"
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"fullName\": \"John Doe\",\n    \"phoneNumber\": \"+8801712345678\",\n    \"email\": \"johndoe@gmail.com\",\n    \"country\": \"Bangladesh\",\n    \"designation\": \"Sales Manager\",\n    \"brandName\": \"ABC Travels\",\n    \"workingFrom\": \"2018\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/agent/request",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"agent",
+								"request"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "request agent",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/sarka/Downloads/pexels-wolrider-18380066.jpg"
+										},
+										{
+											"key": "data",
+											"value": "{\n    \"fullName\": \"John Doe\",\n    \"phoneNumber\": \"+8801712345678\",\n    \"email\": \"johndoe@gmail.com\",\n    \"country\": \"Bangladesh\",\n    \"designation\": \"Sales Manager\",\n    \"brandName\": \"ABC Travels\",\n    \"workingFrom\": \"2018\"\n}",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/agent/request",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"agent",
+										"request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "521"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"209-dhcwfFpXR6jyVdqzfVWIRKENJDs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 08:49:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent requested successfully\",\n    \"data\": {\n        \"fullName\": \"John Doe\",\n        \"phoneNumber\": \"+8801712345678\",\n        \"email\": \"johndoe@gmail.com\",\n        \"country\": \"Bangladesh\",\n        \"designation\": \"Sales Manager\",\n        \"brandName\": \"ABC Travels\",\n        \"workingFrom\": \"2018\",\n        \"status\": \"pending\",\n        \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1757848908/File_Uploader/pexels-wolrider-18380066.jpg.jpg\",\n        \"_id\": \"68cbc7af73ea17558f8adb22\",\n        \"createdAt\": \"2025-09-18T08:49:51.107Z\",\n        \"updatedAt\": \"2025-09-18T08:49:51.107Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "all agent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/agent/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"agent",
+								""
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "uae",
+									"disabled": true
+								},
+								{
+									"key": "fullName",
+									"value": "Ayesha Rahman",
+									"disabled": true
+								},
+								{
+									"key": "phoneNumber",
+									"value": "+971-50-123-4567",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "sarah.khan@example.com",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "pending",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "fullName",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "all agent",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/agent/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"agent",
+										""
+									],
+									"query": [
+										{
+											"key": "searchTerm",
+											"value": "uae",
+											"disabled": true
+										},
+										{
+											"key": "fullName",
+											"value": "Ayesha Rahman",
+											"disabled": true
+										},
+										{
+											"key": "phoneNumber",
+											"value": "+971-50-123-4567",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "sarah.khan@example.com",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "pending",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "fullName",
+											"disabled": true
+										},
+										{
+											"key": "sortOrder",
+											"value": "desc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1741"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6cd-g6Qsd6eIVAP9kVm0MG02m1gbIvE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 09:14:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent requested successfully\",\n    \"meta\": {\n        \"page\": 1,\n        \"limit\": 10,\n        \"total\": 4\n    },\n    \"data\": [\n        {\n            \"_id\": \"68cbc82573ea17558f8adb2b\",\n            \"fullName\": \"Ayesha Rahman\",\n            \"phoneNumber\": \"+971-50-123-4567\",\n            \"email\": \"ayesha.rahman@example.com\",\n            \"country\": \"UAE\",\n            \"designation\": \"Customer Service Manager\",\n            \"brandName\": \"Desert Adventures\",\n            \"workingFrom\": \"2019\",\n            \"status\": \"pending\",\n            \"image\": \"https://avatar.iran.liara.run/public/70.png\",\n            \"createdAt\": \"2025-09-18T08:51:49.467Z\",\n            \"updatedAt\": \"2025-09-18T08:51:49.467Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68cbc80073ea17558f8adb28\",\n            \"fullName\": \"Michael Smith\",\n            \"phoneNumber\": \"+1-202-555-0199\",\n            \"email\": \"michael.smith@example.com\",\n            \"country\": \"USA\",\n            \"designation\": \"Marketing Executive\",\n            \"brandName\": \"Global Holidays\",\n            \"workingFrom\": \"2016\",\n            \"status\": \"pending\",\n            \"image\": \"https://avatar.iran.liara.run/public/6.png\",\n            \"createdAt\": \"2025-09-18T08:51:12.194Z\",\n            \"updatedAt\": \"2025-09-18T08:51:12.194Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68cbc7e973ea17558f8adb25\",\n            \"fullName\": \"Sarah Khan\",\n            \"phoneNumber\": \"+8801911223344\",\n            \"email\": \"sarah.khan@example.com\",\n            \"country\": \"Bangladesh\",\n            \"designation\": \"Travel Consultant\",\n            \"brandName\": \"Skyline Tours\",\n            \"workingFrom\": \"2020\",\n            \"status\": \"pending\",\n            \"image\": \"https://avatar.iran.liara.run/public/83.png\",\n            \"createdAt\": \"2025-09-18T08:50:49.971Z\",\n            \"updatedAt\": \"2025-09-18T08:50:49.971Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68cbc7af73ea17558f8adb22\",\n            \"fullName\": \"John Doe\",\n            \"phoneNumber\": \"+8801712345678\",\n            \"email\": \"johndoe@gmail.com\",\n            \"country\": \"Bangladesh\",\n            \"designation\": \"Sales Manager\",\n            \"brandName\": \"ABC Travels\",\n            \"workingFrom\": \"2018\",\n            \"status\": \"pending\",\n            \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1757848908/File_Uploader/pexels-wolrider-18380066.jpg.jpg\",\n            \"createdAt\": \"2025-09-18T08:49:51.107Z\",\n            \"updatedAt\": \"2025-09-18T08:49:51.107Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "single agent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/agent/68cbc82573ea17558f8adb2b",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"agent",
+								"68cbc82573ea17558f8adb2b"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "single agent",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/agent/68cbc82573ea17558f8adb2b",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"agent",
+										"68cbc82573ea17558f8adb2b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "481"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e1-xbAdiZYxDGfZLqW5MJS6V1Ru2QI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 09:04:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent requested successfully\",\n    \"data\": {\n        \"_id\": \"68cbc82573ea17558f8adb2b\",\n        \"fullName\": \"Ayesha Rahman\",\n        \"phoneNumber\": \"+971-50-123-4567\",\n        \"email\": \"ayesha.rahman@example.com\",\n        \"country\": \"UAE\",\n        \"designation\": \"Customer Service Manager\",\n        \"brandName\": \"Desert Adventures\",\n        \"workingFrom\": \"2019\",\n        \"status\": \"pending\",\n        \"image\": \"https://avatar.iran.liara.run/public/70.png\",\n        \"createdAt\": \"2025-09-18T08:51:49.467Z\",\n        \"updatedAt\": \"2025-09-18T08:51:49.467Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update agent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/sarka/Downloads/View.png"
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"fullName\":\"Sarah Khan\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/agent/68cbc7e973ea17558f8adb25",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"agent",
+								"68cbc7e973ea17558f8adb25"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update agent",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/sarka/Downloads/View.png"
+										},
+										{
+											"key": "data",
+											"value": "{\n    \"fullName\":\"Sarah Khan\"\n}",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/agent/68cbc7e973ea17558f8adb25",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"agent",
+										"68cbc7e973ea17558f8adb25"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "512"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"200-qH1sWvmc2pPQlNxRswDtxb//cAo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 09:19:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent updated successfully\",\n    \"data\": {\n        \"_id\": \"68cbc7e973ea17558f8adb25\",\n        \"fullName\": \"Sarah Khan\",\n        \"phoneNumber\": \"+8801911223344\",\n        \"email\": \"sarah.khan@example.com\",\n        \"country\": \"Bangladesh\",\n        \"designation\": \"Travel Consultant\",\n        \"brandName\": \"Skyline Tours\",\n        \"workingFrom\": \"2020\",\n        \"status\": \"pending\",\n        \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758187187/File_Uploader/view.png.png\",\n        \"createdAt\": \"2025-09-18T08:50:49.971Z\",\n        \"updatedAt\": \"2025-09-18T09:19:50.829Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete agent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/agent/68cbc7e973ea17558f8adb25",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"agent",
+								"68cbc7e973ea17558f8adb25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept or reject agent status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"accepted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/agent/status/68cbc82573ea17558f8adb2b",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"agent",
+								"status",
+								"68cbc82573ea17558f8adb2b"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "accept or reject agent id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"accepted\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/agent/status/68cbc82573ea17558f8adb2b",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"agent",
+										"status",
+										"68cbc82573ea17558f8adb2b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "487"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e7-RDZXhEu5ViEvb8Esuda3nQ+nd60\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 09:35:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent status updated successfully\",\n    \"data\": {\n        \"_id\": \"68cbc82573ea17558f8adb2b\",\n        \"fullName\": \"Ayesha Rahman\",\n        \"phoneNumber\": \"+971-50-123-4567\",\n        \"email\": \"ayesha.rahman@example.com\",\n        \"country\": \"UAE\",\n        \"designation\": \"Customer Service Manager\",\n        \"brandName\": \"Desert Adventures\",\n        \"workingFrom\": \"2019\",\n        \"status\": \"accepted\",\n        \"image\": \"https://avatar.iran.liara.run/public/70.png\",\n        \"createdAt\": \"2025-09-18T08:51:49.467Z\",\n        \"updatedAt\": \"2025-09-18T09:35:51.756Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "creator",
+			"item": [
+				{
+					"name": "request creator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/C:/Users/sarka/Downloads/Wislist.png",
+										"/C:/Users/sarka/Downloads/pexels-hamza01nsr-12725055.jpg"
+									]
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"fullName\": \"Saurav Sarkar\",\n    \"phoneNumber\": \"+8801712345678\",\n    \"email\": \"saurav@example.com\",\n    \"bio\": \"Passionate content creator and tech enthusiast.\",\n    \"description\": \"I create videos and blogs about programming, AI, and tech tutorials.\",\n    \"socialMedia\": [\n        {\n            \"platform\": \"YouTube\",\n            \"link\": \"https://www.youtube.com/sauravchannel\"\n        },\n        {\n            \"platform\": \"Instagram\",\n            \"link\": \"https://www.instagram.com/saurav_sarkar\"\n        }\n    ],\n    \"interests\": [\n        \"Technology\",\n        \"AI\",\n        \"Programming\",\n        \"Gaming\"\n    ]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/creator/request",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"creator",
+								"request"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "request creator",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\": \"Tania Hossain\",\r\n    \"phoneNumber\": \"+8801934567890\",\r\n    \"email\": \"tania@example.com\",\r\n    \"bio\": \"Fitness coach and nutrition expert.\",\r\n    \"description\": \"Sharing workout routines and healthy lifestyle tips.\",\r\n    \"socialMedia\": [\r\n        {\r\n            \"platform\": \"Instagram\",\r\n            \"link\": \"https://instagram.com/tania_fitness\"\r\n        },\r\n        {\r\n            \"platform\": \"TikTok\",\r\n            \"link\": \"https://tiktok.com/@tania_hossain\"\r\n        }\r\n    ],\r\n    \"interests\": [\r\n        \"Fitness\",\r\n        \"Health\",\r\n        \"Yoga\",\r\n        \"Nutrition\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/creator/request",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"creator",
+										"request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "747"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2eb-/+EaGRQ/YxCblhubHjDPL8ffiHo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 10:11:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Creator requested successfully\",\n    \"data\": {\n        \"fullName\": \"Tania Hossain\",\n        \"phoneNumber\": \"+8801934567890\",\n        \"email\": \"tania@example.com\",\n        \"bio\": \"Fitness coach and nutrition expert.\",\n        \"description\": \"Sharing workout routines and healthy lifestyle tips.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"Instagram\",\n                \"link\": \"https://instagram.com/tania_fitness\",\n                \"_id\": \"68cbdaecb36dd8ded5666d4e\"\n            },\n            {\n                \"platform\": \"TikTok\",\n                \"link\": \"https://tiktok.com/@tania_hossain\",\n                \"_id\": \"68cbdaecb36dd8ded5666d4f\"\n            }\n        ],\n        \"interests\": [\n            \"Fitness\",\n            \"Health\",\n            \"Yoga\",\n            \"Nutrition\"\n        ],\n        \"status\": \"pending\",\n        \"image\": [\n            \"https://avatar.iran.liara.run/public/93.png\"\n        ],\n        \"_id\": \"68cbdaecb36dd8ded5666d4d\",\n        \"createdAt\": \"2025-09-18T10:11:56.088Z\",\n        \"updatedAt\": \"2025-09-18T10:11:56.088Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "all creators",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/creator/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"creator",
+								""
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "health",
+									"disabled": true
+								},
+								{
+									"key": "fullName",
+									"value": "Tania Hossain",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "rafiq@example.com",
+									"disabled": true
+								},
+								{
+									"key": "interests",
+									"value": "Yoga",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "pending",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "fullName",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "all creators",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/creator/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"creator",
+										""
+									],
+									"query": [
+										{
+											"key": "searchTerm",
+											"value": "health",
+											"disabled": true
+										},
+										{
+											"key": "fullName",
+											"value": "Tania Hossain",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "rafiq@example.com",
+											"disabled": true
+										},
+										{
+											"key": "interests",
+											"value": "Yoga",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "pending",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "fullName",
+											"disabled": true
+										},
+										{
+											"key": "sortOrder",
+											"value": "desc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2981"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ba5-UH2PZVIANBmYVbtoUXq/J5nYGWM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 10:55:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Creators retrieved successfully\",\n    \"data\": {\n        \"meta\": {\n            \"page\": 1,\n            \"limit\": 10,\n            \"total\": 4\n        },\n        \"data\": [\n            {\n                \"_id\": \"68cbdaecb36dd8ded5666d4d\",\n                \"fullName\": \"Tania Hossain\",\n                \"phoneNumber\": \"+8801934567890\",\n                \"email\": \"tania@example.com\",\n                \"bio\": \"Fitness coach and nutrition expert.\",\n                \"description\": \"Sharing workout routines and healthy lifestyle tips.\",\n                \"socialMedia\": [\n                    {\n                        \"platform\": \"Instagram\",\n                        \"link\": \"https://instagram.com/tania_fitness\",\n                        \"_id\": \"68cbdaecb36dd8ded5666d4e\"\n                    },\n                    {\n                        \"platform\": \"TikTok\",\n                        \"link\": \"https://tiktok.com/@tania_hossain\",\n                        \"_id\": \"68cbdaecb36dd8ded5666d4f\"\n                    }\n                ],\n                \"interests\": [\n                    \"Fitness\",\n                    \"Health\",\n                    \"Yoga\",\n                    \"Nutrition\"\n                ],\n                \"status\": \"pending\",\n                \"image\": [\n                    \"https://avatar.iran.liara.run/public/93.png\"\n                ],\n                \"createdAt\": \"2025-09-18T10:11:56.088Z\",\n                \"updatedAt\": \"2025-09-18T10:11:56.088Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68cbdad8b36dd8ded5666d48\",\n                \"fullName\": \"Rafiq Ahmed\",\n                \"phoneNumber\": \"+8801765432109\",\n                \"email\": \"rafiq@example.com\",\n                \"bio\": \"Tech reviewer and software developer.\",\n                \"description\": \"I review gadgets, write tutorials, and share coding tips.\",\n                \"socialMedia\": [\n                    {\n                        \"platform\": \"YouTube\",\n                        \"link\": \"https://youtube.com/rafiqtech\",\n                        \"_id\": \"68cbdad8b36dd8ded5666d49\"\n                    },\n                    {\n                        \"platform\": \"LinkedIn\",\n                        \"link\": \"https://linkedin.com/in/rafiqahmed\",\n                        \"_id\": \"68cbdad8b36dd8ded5666d4a\"\n                    }\n                ],\n                \"interests\": [\n                    \"Technology\",\n                    \"Gadgets\",\n                    \"Programming\"\n                ],\n                \"status\": \"pending\",\n                \"image\": [\n                    \"https://avatar.iran.liara.run/public/54.png\"\n                ],\n                \"createdAt\": \"2025-09-18T10:11:36.259Z\",\n                \"updatedAt\": \"2025-09-18T10:11:36.259Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68cbdac1b36dd8ded5666d43\",\n                \"fullName\": \"Anika Rahman\",\n                \"phoneNumber\": \"+8801987654321\",\n                \"email\": \"anika@example.com\",\n                \"bio\": \"Lifestyle vlogger and photographer.\",\n                \"description\": \"I share tips on lifestyle, fashion, and travel.\",\n                \"socialMedia\": [\n                    {\n                        \"platform\": \"Instagram\",\n                        \"link\": \"https://instagram.com/anika_rahman\",\n                        \"_id\": \"68cbdac1b36dd8ded5666d44\"\n                    },\n                    {\n                        \"platform\": \"Facebook\",\n                        \"link\": \"https://facebook.com/anika.rahman\",\n                        \"_id\": \"68cbdac1b36dd8ded5666d45\"\n                    }\n                ],\n                \"interests\": [\n                    \"Fashion\",\n                    \"Photography\",\n                    \"Travel\"\n                ],\n                \"status\": \"pending\",\n                \"image\": [\n                    \"https://avatar.iran.liara.run/public/18.png\"\n                ],\n                \"createdAt\": \"2025-09-18T10:11:13.965Z\",\n                \"updatedAt\": \"2025-09-18T10:11:13.965Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68cbda68b36dd8ded5666d3e\",\n                \"fullName\": \"Saurav Sarkar\",\n                \"phoneNumber\": \"+8801712345678\",\n                \"email\": \"saurav@example.com\",\n                \"bio\": \"Passionate content creator and tech enthusiast.\",\n                \"description\": \"I create videos and blogs about programming, AI, and tech tutorials.\",\n                \"socialMedia\": [\n                    {\n                        \"platform\": \"YouTube\",\n                        \"link\": \"https://www.youtube.com/sauravchannel\",\n                        \"_id\": \"68cbda68b36dd8ded5666d3f\"\n                    },\n                    {\n                        \"platform\": \"Instagram\",\n                        \"link\": \"https://www.instagram.com/saurav_sarkar\",\n                        \"_id\": \"68cbda68b36dd8ded5666d40\"\n                    }\n                ],\n                \"interests\": [\n                    \"Technology\",\n                    \"AI\",\n                    \"Programming\",\n                    \"Gaming\"\n                ],\n                \"status\": \"pending\",\n                \"image\": [\n                    \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758190178/File_Uploader/wislist.png.png\",\n                    \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758190181/File_Uploader/pexels-hamza01nsr-12725055.jpg.jpg\"\n                ],\n                \"createdAt\": \"2025-09-18T10:09:44.638Z\",\n                \"updatedAt\": \"2025-09-18T10:09:44.638Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "single creator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/creator/68cbdad8b36dd8ded5666d48",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"creator",
+								"68cbdad8b36dd8ded5666d48"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "single creator",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/creator/68cbdad8b36dd8ded5666d48",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"creator",
+										"68cbdad8b36dd8ded5666d48"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "746"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ea-NtV9uFiu2ScGpK/JSUHOF9oTOBM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 11:07:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Creator retrieved successfully\",\n    \"data\": {\n        \"_id\": \"68cbdad8b36dd8ded5666d48\",\n        \"fullName\": \"Rafiq Ahmed\",\n        \"phoneNumber\": \"+8801765432109\",\n        \"email\": \"rafiq@example.com\",\n        \"bio\": \"Tech reviewer and software developer.\",\n        \"description\": \"I review gadgets, write tutorials, and share coding tips.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"YouTube\",\n                \"link\": \"https://youtube.com/rafiqtech\",\n                \"_id\": \"68cbdad8b36dd8ded5666d49\"\n            },\n            {\n                \"platform\": \"LinkedIn\",\n                \"link\": \"https://linkedin.com/in/rafiqahmed\",\n                \"_id\": \"68cbdad8b36dd8ded5666d4a\"\n            }\n        ],\n        \"interests\": [\n            \"Technology\",\n            \"Gadgets\",\n            \"Programming\"\n        ],\n        \"status\": \"pending\",\n        \"image\": [\n            \"https://avatar.iran.liara.run/public/54.png\"\n        ],\n        \"createdAt\": \"2025-09-18T10:11:36.259Z\",\n        \"updatedAt\": \"2025-09-18T10:11:36.259Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update creator",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/C:/Users/sarka/Downloads/product-1.jpeg",
+										"/C:/Users/sarka/Downloads/pexels-arturoaez225-13525776.jpg"
+									]
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"fullName\": \"Rafiq Ahmed\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/creator/68cbdad8b36dd8ded5666d48",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"creator",
+								"68cbdad8b36dd8ded5666d48"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update creator",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": [
+												"/C:/Users/sarka/Downloads/product-1.jpeg",
+												"/C:/Users/sarka/Downloads/pexels-arturoaez225-13525776.jpg"
+											]
+										},
+										{
+											"key": "data",
+											"value": "{\n    \"fullName\": \"Rafiq Ahmed\"\n}",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/creator/68cbdad8b36dd8ded5666d48",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"creator",
+										"68cbdad8b36dd8ded5666d48"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "910"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38e-8XmhIzAYKaOmS53BG+tdezZjTj8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 11:11:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Creator updated successfully\",\n    \"data\": {\n        \"_id\": \"68cbdad8b36dd8ded5666d48\",\n        \"fullName\": \"Rafiq Ahmed\",\n        \"phoneNumber\": \"+8801765432109\",\n        \"email\": \"rafiq@example.com\",\n        \"bio\": \"Tech reviewer and software developer.\",\n        \"description\": \"I review gadgets, write tutorials, and share coding tips.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"YouTube\",\n                \"link\": \"https://youtube.com/rafiqtech\",\n                \"_id\": \"68cbdad8b36dd8ded5666d49\"\n            },\n            {\n                \"platform\": \"LinkedIn\",\n                \"link\": \"https://linkedin.com/in/rafiqahmed\",\n                \"_id\": \"68cbdad8b36dd8ded5666d4a\"\n            }\n        ],\n        \"interests\": [\n            \"Technology\",\n            \"Gadgets\",\n            \"Programming\"\n        ],\n        \"status\": \"pending\",\n        \"image\": [\n            \"https://res.cloudinary.com/dw5wizivl/image/upload/v1756877298/File_Uploader/product-1.jpeg.jpg\",\n            \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758193868/File_Uploader/pexels-arturoaez225-13525776.jpg.jpg\"\n        ],\n        \"createdAt\": \"2025-09-18T10:11:36.259Z\",\n        \"updatedAt\": \"2025-09-18T11:11:11.559Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete creator",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/creator/68cbdad8b36dd8ded5666d48",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"creator",
+								"68cbdad8b36dd8ded5666d48"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept or reject creator by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"accepted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/creator/status/68cbdad8b36dd8ded5666d48",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"creator",
+								"status",
+								"68cbdad8b36dd8ded5666d48"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "accept or reject creator by id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"accepted\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/creator/status/68cbdad8b36dd8ded5666d48",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"creator",
+										"status",
+										"68cbdad8b36dd8ded5666d48"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "916"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"394-20fKo+pry7xTb0jxivV7eGnqkx4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Sep 2025 11:16:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent status updated successfully\",\n    \"data\": {\n        \"_id\": \"68cbdad8b36dd8ded5666d48\",\n        \"fullName\": \"Rafiq Ahmed\",\n        \"phoneNumber\": \"+8801765432109\",\n        \"email\": \"rafiq@example.com\",\n        \"bio\": \"Tech reviewer and software developer.\",\n        \"description\": \"I review gadgets, write tutorials, and share coding tips.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"YouTube\",\n                \"link\": \"https://youtube.com/rafiqtech\",\n                \"_id\": \"68cbdad8b36dd8ded5666d49\"\n            },\n            {\n                \"platform\": \"LinkedIn\",\n                \"link\": \"https://linkedin.com/in/rafiqahmed\",\n                \"_id\": \"68cbdad8b36dd8ded5666d4a\"\n            }\n        ],\n        \"interests\": [\n            \"Technology\",\n            \"Gadgets\",\n            \"Programming\"\n        ],\n        \"status\": \"accepted\",\n        \"image\": [\n            \"https://res.cloudinary.com/dw5wizivl/image/upload/v1756877298/File_Uploader/product-1.jpeg.jpg\",\n            \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758193868/File_Uploader/pexels-arturoaez225-13525776.jpg.jpg\"\n        ],\n        \"createdAt\": \"2025-09-18T10:11:36.259Z\",\n        \"updatedAt\": \"2025-09-18T11:16:28.882Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "top talents",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		}
+	]
+}
