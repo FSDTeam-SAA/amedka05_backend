@@ -1,17 +1,17 @@
 import express from 'express';
 import { agentController } from './agent.controller';
 import { fileUploader } from '../../helper/fileUploder';
+
 const router = express.Router();
 
 // only admin access this route
-router.patch('/status/:id', agentController.updatedStatus);
+router.put('/status/:id', agentController.updatedStatus);
 
 router.post(
   '/request',
   fileUploader.upload.single('image'),
   agentController.requestAgent,
 );
-
 
 
 router.get('/', agentController.getAllAgent);
