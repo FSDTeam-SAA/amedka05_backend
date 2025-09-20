@@ -12,6 +12,7 @@ const creatorSchema = new mongoose.Schema<ICreator>(
       {
         platform: { type: String },
         link: { type: String },
+        followers: { type: Number },
       },
     ],
     interests: [{ type: String }],
