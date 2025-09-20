@@ -3,6 +3,7 @@ import { userRoutes } from '../modules/user/user.routes';
 import { authRoutes } from '../modules/auth/auth.routes';
 import { agentRouter } from '../modules/agent/agent.routes';
 import { creatorRouter } from '../modules/creator/creator.routes';
+import { tripsRouter } from '../modules/trips/trips.routes';
 
 const router = Router();
 
@@ -22,6 +23,10 @@ const moduleRoutes = [
   {
     path: '/creator',
     route: creatorRouter,
+  },
+  {
+    path: '/trip',
+    route: tripsRouter,
   },
 ];
 

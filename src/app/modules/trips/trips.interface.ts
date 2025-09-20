@@ -1,7 +1,8 @@
 export interface ITrips {
   country: string;
   location: string;
-  startData: Date;
-  endData: Date;
+  startDate: Date;
+  endDate: Date;
+  participants: string[];
   image?: string;
 }

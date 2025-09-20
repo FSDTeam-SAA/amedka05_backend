@@ -5,8 +5,9 @@ const tripsSchema = new mongoose.Schema<ITrips>(
   {
     country: { type: String, required: true },
     location: { type: String, required: true },
-    startData: { type: Date, required: true },
-    endData: { type: Date, required: true },
+    startDate: { type: Date, required: true },
+    endDate: { type: Date, required: true },
+    participants: { type: [String], required: true },
     image: { type: String },
   },
   { timestamps: true },
