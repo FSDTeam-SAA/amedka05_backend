@@ -19,4 +19,3 @@ router.put(
 router.delete('/:id', tripController.deleteTrip);
 
 export const tripsRouter = router;
-                                                                                                                                                                                                                                                                                                                                                           
