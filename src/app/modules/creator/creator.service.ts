@@ -4,6 +4,7 @@ import pagination, { IOption } from '../../helper/pagenation';
 import { ICreator } from './creator.interface';
 import Creator from './creator.model';
 
+
 const requestCreator = async (
   payload: ICreator,
   files?: Express.Multer.File[],
@@ -30,10 +31,11 @@ const requestCreator = async (
   return result;
 };
 
+
+
 const getAllCreators = async (params: any, options: IOption) => {
   const { page, limit, skip, sortBy, sortOrder } = pagination(options);
-
-  const { searchTerm, ...filterData } = params;
+  const { searchTerm, tier, ...filterData } = params;
 
   const searchableFields = [
     'fullName',
@@ -43,11 +45,12 @@ const getAllCreators = async (params: any, options: IOption) => {
     'description',
     'status',
     'interests',
+    'tier'
   ];
 
   const andCondition: any[] = [];
 
-  // search filter
+  // Search filter
   if (searchTerm) {
     andCondition.push({
       $or: searchableFields.map((field) => ({
@@ -56,7 +59,7 @@ const getAllCreators = async (params: any, options: IOption) => {
     });
   }
 
-  // exact field filter
+  // 🎯 Exact filters (status, email, etc.)
   if (Object.keys(filterData).length > 0) {
     andCondition.push({
       $and: Object.entries(filterData).map(([field, value]) => ({
@@ -65,14 +68,51 @@ const getAllCreators = async (params: any, options: IOption) => {
     });
   }
 
-  const whereConditions = andCondition.length > 0 ? { $and: andCondition } : {};
+  // 🛠 Build aggregation pipeline
+  const pipeline: any[] = [
+    // Step 1: base filters (before tier calculation)
+    ...(andCondition.length > 0 ? [{ $match: { $and: andCondition } }] : []),
 
-  const result = await Creator.find(whereConditions)
-    .skip(skip)
-    .limit(limit)
-    .sort({ [sortBy]: sortOrder } as any);
+    // Step 2: calculate totalFollowers
+    {
+      $addFields: {
+        totalFollowers: { $sum: '$socialMedia.followers' },
+      },
+    },
 
-  const total = await Creator.countDocuments(whereConditions);
+    // Step 3: assign tier
+    {
+      $addFields: {
+        tier: {
+          $cond: [{ $gte: ['$totalFollowers', 20000] }, 'top', 'mid'],
+        },
+      },
+    },
+  ];
+
+  // Step 4: filter by tier (AFTER it exists)
+  if (tier) {
+    pipeline.push({ $match: { tier } });
+  }
+
+  // Step 5: sort + paginate
+  pipeline.push(
+    { $sort: { [sortBy || 'createdAt']: sortOrder === 'asc' ? 1 : -1 } },
+    { $skip: skip },
+    { $limit: limit },
+  );
+
+  // Run query
+  const result = await Creator.aggregate(pipeline);
+
+  // Count total (without pagination)
+  const countPipeline = pipeline.filter(
+    (stage) => !('$skip' in stage) && !('$limit' in stage) && !('$sort' in stage),
+  );
+  countPipeline.push({ $count: 'total' });
+
+  const countResult = await Creator.aggregate(countPipeline);
+  const total = countResult.length > 0 ? countResult[0].total : 0;
 
   return {
     meta: {
@@ -84,11 +124,13 @@ const getAllCreators = async (params: any, options: IOption) => {
   };
 };
 
+
 const singleCreator = async (id: string) => {
   const result = await Creator.findById(id);
   if (!result) throw new AppError(404, 'Creator not found');
   return result;
 };
+
 
 const updatedCreator = async (
   id: string,

@@ -3,6 +3,7 @@ import catchAsync from '../../utils/catchAsycn';
 import sendResponse from '../../utils/sendResponse';
 import { creatorService } from './creator.service';
 
+
 const requestCreator = catchAsync(async (req, res) => {
   const files = req.files as Express.Multer.File[];
   const fromData = req.body.data ? JSON.parse(req.body.data) : req.body;
@@ -17,6 +18,7 @@ const requestCreator = catchAsync(async (req, res) => {
   });
 });
 
+
 const getAllCreators = catchAsync(async (req, res) => {
   const filters = pick(req.query, [
     'searchTerm',
@@ -27,6 +29,7 @@ const getAllCreators = catchAsync(async (req, res) => {
     'description',
     'status',
     'interests',
+    'tier'
   ]);
   const options = pick(req.query, ['limit', 'page', 'sortBy', 'sortOrder']);
   const result = await creatorService.getAllCreators(filters, options);
@@ -39,6 +42,7 @@ const getAllCreators = catchAsync(async (req, res) => {
   });
 });
 
+
 const singleCreator = catchAsync(async (req, res) => {
   const result = await creatorService.singleCreator(req.params.id);
 
@@ -49,6 +53,7 @@ const singleCreator = catchAsync(async (req, res) => {
     data: result,
   });
 });
+
 
 const updatedCreator = catchAsync(async (req, res) => {
   const files = req.files as Express.Multer.File[];
@@ -67,6 +72,7 @@ const updatedCreator = catchAsync(async (req, res) => {
   });
 });
 
+
 const deleteCreator = catchAsync(async (req, res) => {
   const result = await creatorService.deleteCreator(req.params.id);
 
@@ -77,6 +83,7 @@ const deleteCreator = catchAsync(async (req, res) => {
     data: result,
   });
 });
+
 
 const updatedStatus = catchAsync(async (req, res) => {
   const { id } = req.params;
@@ -91,6 +98,7 @@ const updatedStatus = catchAsync(async (req, res) => {
     data: result,
   });
 });
+
 
 export const creatorController = {
   requestCreator,
