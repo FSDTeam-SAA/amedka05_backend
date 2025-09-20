@@ -63,7 +63,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -136,43 +136,174 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "forgot password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"saurav.bdcalling@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/forgot-password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"forgot-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "112"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"70-G8Rz+2+6zoqhqo5ucFmzZQGeJrE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 10:36:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"OTP sent to your email\",\n    \"data\": {\n        \"message\": \"OTP sent to your email\"\n    }\n}"
+						}
+					]
 				},
 				{
-					"name": "verify email",
+					"name": "reset-password-change",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"saurav.bdcalling@gmail.com\",\r\n    \"newPassword\":\"654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{base_url}}/auth/verify-email",
+							"raw": "{{base_url}}/auth/reset-password-change",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"auth",
-								"verify-email"
+								"reset-password-change"
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "change password",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/auth/change-password",
-							"host": [
-								"{{base_url}}"
+					"response": [
+						{
+							"name": "reset-password-change",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"saurav.bdcalling@gmail.com\",\r\n    \"newPassword\":\"654321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/reset-password-change",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"reset-password-change"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "935"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a7-9OHkCZHra5da7r6bABfLnBWjsDk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 11:33:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
 							],
-							"path": [
-								"auth",
-								"change-password"
-							]
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Password reset successfully\",\n    \"data\": {\n        \"message\": \"Password reset successfully\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Y2JlZjY0MzQ0ZTE2MTNmNjhlZTAyOSIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoic2F1cmF2LmJkY2FsbGluZ0BnbWFpbC5jb20iLCJpYXQiOjE3NTgzNjc5OTYsImV4cCI6MTc1ODk3Mjc5Nn0.oseJVd0ZHSeym0zgF9-YTSZUzlF34-px2IQBI-uRzd4\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Y2JlZjY0MzQ0ZTE2MTNmNjhlZTAyOSIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoic2F1cmF2LmJkY2FsbGluZ0BnbWFpbC5jb20iLCJpYXQiOjE3NTgzNjc5OTYsImV4cCI6MTc2NjE0Mzk5Nn0.mkTRj_1gTAPMolMxj24qHE3E5E6-zV5UDH1aWSnoe4M\",\n        \"user\": {\n            \"_id\": \"68cbef64344e1613f68ee029\",\n            \"firstName\": \"saurav\",\n            \"lastName\": \"sarkar\",\n            \"email\": \"saurav.bdcalling@gmail.com\",\n            \"role\": \"admin\",\n            \"profileImage\": \"https://avatar.iran.liara.run/public/34.png\",\n            \"verified\": true,\n            \"createdAt\": \"2025-09-18T11:39:16.192Z\",\n            \"updatedAt\": \"2025-09-20T11:33:16.010Z\",\n            \"__v\": 0\n        }\n    }\n}"
 						}
-					},
-					"response": []
+					]
 				},
 				{
 					"name": "register admin",
@@ -270,6 +401,186 @@
 							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"User registered successfully. Please verify your email.\",\n    \"data\": {\n        \"firstName\": \"Jack\",\n        \"lastName\": \"Maxxill\",\n        \"email\": \"admin@gmail.com\",\n        \"password\": \"$2b$10$L63CEkawfaKainHD5uoc0O5VRjGhEj0pVQynd8x/UffGyt8EhlrpW\",\n        \"role\": \"user\",\n        \"profileImage\": \"https://avatar.iran.liara.run/public/43.png\",\n        \"verified\": true,\n        \"_id\": \"68cbee11344e1613f68ee024\",\n        \"createdAt\": \"2025-09-18T11:33:37.440Z\",\n        \"updatedAt\": \"2025-09-18T11:33:37.440Z\",\n        \"__v\": 0\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "verify-email-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"saurav.bdcalling@gmail.com\",\r\n    \"otp\": \"115417\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/verify-email",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"verify-email"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "verify-email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"saurav.bdcalling@gmail.com\",\r\n    \"otp\": \"115417\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/verify-email",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"verify-email"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "122"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7a-ihBg5yhOA0lOIJ0ByQzt1EsGg5Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 11:31:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Email verified successfully\",\n    \"data\": {\n        \"message\": \"Email verified successfully\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/auth/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4a-5tb9eIoED3hMfvINktqwBH0cE4U\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 11:37:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User logged out successfully\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -300,32 +611,444 @@
 				{
 					"name": "create contacts",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Tanvir Hasan\",\r\n    \"selectOption\": \"agent\",\r\n    \"phoneNumber\": \"+8801555444333\",\r\n    \"email\": \"tanvir@example.com\",\r\n    \"message\": \"I would like to showcase my portfolio.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/contact/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contact",
+								"create"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "create contacts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\": \"Saurav Sarkar\",\r\n    \"selectOption\": \"creator\",\r\n    \"phoneNumber\": \"+8801712345678\",\r\n    \"email\": \"saurav@example.com\",\r\n    \"message\": \"I am interested in collaborating on your upcoming project.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/contact/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"contact",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-RAAgh9B8XYBG+9Pm70xiWJ4ple8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 09:58:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Contact created successfully\",\n    \"data\": {\n        \"fullName\": \"Saurav Sarkar\",\n        \"selectOption\": \"creator\",\n        \"phoneNumber\": \"+8801712345678\",\n        \"email\": \"saurav@example.com\",\n        \"message\": \"I am interested in collaborating on your upcoming project.\",\n        \"_id\": \"68ce7aca2b807c63fb4515ae\",\n        \"createdAt\": \"2025-09-20T09:58:34.009Z\",\n        \"updatedAt\": \"2025-09-20T09:58:34.009Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "all contact",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contact/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contact",
+								""
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "details",
+									"disabled": true
+								},
+								{
+									"key": "fullName",
+									"value": "Tanvir Hasan",
+									"disabled": true
+								},
+								{
+									"key": "selectOption",
+									"value": "agent",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "selectOption",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "all contact",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/contact/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"contact",
+										""
+									],
+									"query": [
+										{
+											"key": "searchTerm",
+											"value": "details",
+											"disabled": true
+										},
+										{
+											"key": "fullName",
+											"value": "Tanvir Hasan",
+											"disabled": true
+										},
+										{
+											"key": "selectOption",
+											"value": "agent",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "selectOption",
+											"disabled": true
+										},
+										{
+											"key": "sortOrder",
+											"value": "desc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1309"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"51d-uHy88HiPkHSPb6+3exaCnoDvC4s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 10:03:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Contact retrieved successfully\",\n    \"data\": {\n        \"meta\": {\n            \"page\": 1,\n            \"limit\": 10,\n            \"total\": 4\n        },\n        \"data\": [\n            {\n                \"_id\": \"68ce7b042b807c63fb4515b4\",\n                \"fullName\": \"Tanvir Hasan\",\n                \"selectOption\": \"agent\",\n                \"phoneNumber\": \"+8801555444333\",\n                \"email\": \"tanvir@example.com\",\n                \"message\": \"I would like to showcase my portfolio.\",\n                \"createdAt\": \"2025-09-20T09:59:32.370Z\",\n                \"updatedAt\": \"2025-09-20T09:59:32.370Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ce7aef2b807c63fb4515b2\",\n                \"fullName\": \"Rafiq Ahmed\",\n                \"selectOption\": \"agent\",\n                \"phoneNumber\": \"+8801999887766\",\n                \"email\": \"rafiq@example.com\",\n                \"message\": \"Please share more details about the partnership opportunities.\",\n                \"createdAt\": \"2025-09-20T09:59:11.704Z\",\n                \"updatedAt\": \"2025-09-20T09:59:11.704Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ce7ae02b807c63fb4515b0\",\n                \"fullName\": \"Ayesha Rahman\",\n                \"selectOption\": \"creator\",\n                \"phoneNumber\": \"+8801811223344\",\n                \"email\": \"ayesha@example.com\",\n                \"message\": \"Looking forward to working with your team.\",\n                \"createdAt\": \"2025-09-20T09:58:56.060Z\",\n                \"updatedAt\": \"2025-09-20T09:58:56.060Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ce7aca2b807c63fb4515ae\",\n                \"fullName\": \"Saurav Sarkar\",\n                \"selectOption\": \"creator\",\n                \"phoneNumber\": \"+8801712345678\",\n                \"email\": \"saurav@example.com\",\n                \"message\": \"I am interested in collaborating on your upcoming project.\",\n                \"createdAt\": \"2025-09-20T09:58:34.009Z\",\n                \"updatedAt\": \"2025-09-20T09:58:34.009Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
 				},
 				{
-					"name": "accpet or reject",
+					"name": "update contacts",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Rafiq Ahmeds\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/contact/68ce7aef2b807c63fb4515b2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contact",
+								"68ce7aef2b807c63fb4515b2"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "update contacts",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\": \"Rafiq Ahmeds\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/contact/68ce7aef2b807c63fb4515b2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"contact",
+										"68ce7aef2b807c63fb4515b2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-cpqyocg/gdkPcObTH9JYONIs/XY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 10:06:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Contact updated successfully\",\n    \"data\": {\n        \"_id\": \"68ce7aef2b807c63fb4515b2\",\n        \"fullName\": \"Rafiq Ahmeds\",\n        \"selectOption\": \"agent\",\n        \"phoneNumber\": \"+8801999887766\",\n        \"email\": \"rafiq@example.com\",\n        \"message\": \"Please share more details about the partnership opportunities.\",\n        \"createdAt\": \"2025-09-20T09:59:11.704Z\",\n        \"updatedAt\": \"2025-09-20T10:06:52.524Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "single contact",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contact/68ce7aef2b807c63fb4515b2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contact",
+								"68ce7aef2b807c63fb4515b2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "single contact",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/contact/68ce7aef2b807c63fb4515b2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"contact",
+										"68ce7aef2b807c63fb4515b2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "386"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"182-N1Kh9yYgYw0Y2lu6gHloGW9FdwY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 10:04:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Contact retrieved successfully\",\n    \"data\": {\n        \"_id\": \"68ce7aef2b807c63fb4515b2\",\n        \"fullName\": \"Rafiq Ahmed\",\n        \"selectOption\": \"agent\",\n        \"phoneNumber\": \"+8801999887766\",\n        \"email\": \"rafiq@example.com\",\n        \"message\": \"Please share more details about the partnership opportunities.\",\n        \"createdAt\": \"2025-09-20T09:59:11.704Z\",\n        \"updatedAt\": \"2025-09-20T09:59:11.704Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete contacts",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contact/68ce7aef2b807c63fb4515b2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contact",
+								"68ce7aef2b807c63fb4515b2"
+							]
+						}
 					},
 					"response": []
 				}
@@ -337,42 +1060,474 @@
 				{
 					"name": "upload video or create even",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/C:/Users/sarka/Downloads/2432400-hd_1920_1080_24fps.mp4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/event/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								"create"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "upload video or create even",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"url\": \"https://youtu.be/u_qFlTu7HTw?si=WRmcJXMGpxF8GdWV\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/event/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"event",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "257"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"101-eSCBohzy2SRbbtejkWXFjV86MWg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 08:32:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Event created successfully\",\n    \"data\": {\n        \"url\": \"https://youtu.be/u_qFlTu7HTw?si=WRmcJXMGpxF8GdWV\",\n        \"_id\": \"68ce668d74e5653419144f9a\",\n        \"createdAt\": \"2025-09-20T08:32:13.672Z\",\n        \"updatedAt\": \"2025-09-20T08:32:13.672Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "upload video or create even",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "video",
+											"type": "file",
+											"src": "/C:/Users/sarka/Downloads/2432400-hd_1920_1080_24fps.mp4"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/event/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"event",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "321"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"141-ACCvlqWmgKHpp8AKsaY3cJHwVLE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 08:33:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Event created successfully\",\n    \"data\": {\n        \"video\": \"https://res.cloudinary.com/dw5wizivl/video/upload/v1758357186/File_Uploader/2432400-hd_1920_1080_24fps.mp4.mp4\",\n        \"_id\": \"68ce66c674e5653419144f9c\",\n        \"createdAt\": \"2025-09-20T08:33:10.294Z\",\n        \"updatedAt\": \"2025-09-20T08:33:10.294Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "all even",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/event/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "all even",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/event/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"event",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "795"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31b-2a57jV0zkG6JxTNGCfeonOtMKI8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 08:45:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Events retrieved successfully\",\n    \"data\": {\n        \"meta\": {\n            \"page\": 1,\n            \"limit\": 10,\n            \"total\": 3\n        },\n        \"data\": [\n            {\n                \"_id\": \"68ce66c674e5653419144f9c\",\n                \"video\": \"https://res.cloudinary.com/dw5wizivl/video/upload/v1758357186/File_Uploader/2432400-hd_1920_1080_24fps.mp4.mp4\",\n                \"createdAt\": \"2025-09-20T08:33:10.294Z\",\n                \"updatedAt\": \"2025-09-20T08:33:10.294Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ce668d74e5653419144f9a\",\n                \"url\": \"https://youtu.be/u_qFlTu7HTw?si=WRmcJXMGpxF8GdWV\",\n                \"createdAt\": \"2025-09-20T08:32:13.672Z\",\n                \"updatedAt\": \"2025-09-20T08:32:13.672Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ce652363a621ad5ee7295f\",\n                \"video\": \"https://res.cloudinary.com/dw5wizivl/video/upload/v1758356764/File_Uploader/2361938-uhd_3840_2160_30fps.mp4.mp4\",\n                \"createdAt\": \"2025-09-20T08:26:11.517Z\",\n                \"updatedAt\": \"2025-09-20T08:26:11.517Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "single even",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/event/68ce668d74e5653419144f9a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								"68ce668d74e5653419144f9a"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "single even",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/event/68ce668d74e5653419144f9a",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"event",
+										"68ce668d74e5653419144f9a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-1YEZkbI77T2QLr293bh7Wc/qsKA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 08:48:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Event retrieved successfully\",\n    \"data\": {\n        \"_id\": \"68ce668d74e5653419144f9a\",\n        \"url\": \"https://youtu.be/u_qFlTu7HTw?si=WRmcJXMGpxF8GdWV\",\n        \"createdAt\": \"2025-09-20T08:32:13.672Z\",\n        \"updatedAt\": \"2025-09-20T08:32:13.672Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "deleted even",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/event/68ce668d74e5653419144f9a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								"68ce668d74e5653419144f9a"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "update even",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/C:/Users/sarka/Downloads/2890196-hd_1920_1080_30fps.mp4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/event/68ce668d74e5653419144f9a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								"68ce668d74e5653419144f9a"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "update even",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "video",
+											"type": "file",
+											"src": "/C:/Users/sarka/Downloads/2890196-hd_1920_1080_30fps.mp4"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/event/68ce668d74e5653419144f9a",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"event",
+										"68ce668d74e5653419144f9a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "378"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17a-MohtL1F9lAca5tUDgqxppYZjam0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 09:01:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Event updated successfully\",\n    \"data\": {\n        \"_id\": \"68ce668d74e5653419144f9a\",\n        \"url\": \"https://youtu.be/u_qFlTu7HTw?si=WRmcJXMGpxF8GdWV\",\n        \"createdAt\": \"2025-09-20T08:32:13.672Z\",\n        \"updatedAt\": \"2025-09-20T09:01:55.949Z\",\n        \"__v\": 0,\n        \"video\": \"https://res.cloudinary.com/dw5wizivl/video/upload/v1758358911/File_Uploader/2890196-hd_1920_1080_30fps.mp4.mp4\"\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -382,40 +1537,482 @@
 				{
 					"name": "create net trip",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/sarka/Downloads/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg"
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"country\": \"Italy\",\n    \"location\": \"Rome\",\n    \"startDate\": \"2025-12-05T00:00:00.000Z\",\n    \"endDate\": \"2025-12-15T00:00:00.000Z\",\n    \"participants\": [\n        \"Sophia Rossi\",\n        \"Marco Bianchi\",\n        \"Olivia Adams\"\n    ]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/trip/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trip",
+								"create"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "create net trip",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/sarka/Downloads/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg"
+										},
+										{
+											"key": "data",
+											"value": "{\n    \"country\": \"Italy\",\n    \"location\": \"Rome\",\n    \"startDate\": \"2025-12-05T00:00:00.000Z\",\n    \"endDate\": \"2025-12-15T00:00:00.000Z\",\n    \"participants\": [\n        \"Sophia Rossi\",\n        \"Marco Bianchi\",\n        \"Olivia Adams\"\n    ]\n}",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/trip/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"trip",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "507"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1fb-UxaJTA/KbIx1LM4Za7Aa2J/K1uU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 04:15:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Trip created successfully!\",\n    \"data\": {\n        \"country\": \"Italy\",\n        \"location\": \"Rome\",\n        \"startDate\": \"2025-12-05T00:00:00.000Z\",\n        \"endDate\": \"2025-12-15T00:00:00.000Z\",\n        \"participants\": [\n            \"Sophia Rossi\",\n            \"Marco Bianchi\",\n            \"Olivia Adams\"\n        ],\n        \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758341714/File_Uploader/pietro-de-grandi-t7k4aepoggk-unsplash.jpg.jpg\",\n        \"_id\": \"68ce2a54764a2d8b93e54140\",\n        \"createdAt\": \"2025-09-20T04:15:16.794Z\",\n        \"updatedAt\": \"2025-09-20T04:15:16.794Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "all trips",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/trip",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trip"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "Chen",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "Italy",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "Rome",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "country",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc",
+									"disabled": true
+								}
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "all trips",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}/trip",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"trip"
+									],
+									"query": [
+										{
+											"key": "searchTerm",
+											"value": "Chen",
+											"disabled": true
+										},
+										{
+											"key": "country",
+											"value": "Italy",
+											"disabled": true
+										},
+										{
+											"key": "location",
+											"value": "Rome",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "country",
+											"disabled": true
+										},
+										{
+											"key": "sortOrder",
+											"value": "asc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1379"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"563-Nw7GQA0f8w3jMh0jV4DzAiKnGA4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 04:34:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Trips retrieved successfully!\",\n    \"data\": {\n        \"meta\": {\n            \"page\": 1,\n            \"limit\": 10,\n            \"total\": 3\n        },\n        \"data\": [\n            {\n                \"_id\": \"68ce2a54764a2d8b93e54140\",\n                \"country\": \"Italy\",\n                \"location\": \"Rome\",\n                \"startDate\": \"2025-12-05T00:00:00.000Z\",\n                \"endDate\": \"2025-12-15T00:00:00.000Z\",\n                \"participants\": [\n                    \"Sophia Rossi\",\n                    \"Marco Bianchi\",\n                    \"Olivia Adams\"\n                ],\n                \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758341714/File_Uploader/pietro-de-grandi-t7k4aepoggk-unsplash.jpg.jpg\",\n                \"createdAt\": \"2025-09-20T04:15:16.794Z\",\n                \"updatedAt\": \"2025-09-20T04:15:16.794Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ce2a0d764a2d8b93e5413d\",\n                \"country\": \"China\",\n                \"location\": \"Beijing\",\n                \"startDate\": \"2025-11-01T00:00:00.000Z\",\n                \"endDate\": \"2025-11-10T00:00:00.000Z\",\n                \"participants\": [\n                    \"David Lee\",\n                    \"Emma Chen\"\n                ],\n                \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758341641/File_Uploader/neom-eowabmcnedg-unsplash.jpg.jpg\",\n                \"createdAt\": \"2025-09-20T04:14:05.161Z\",\n                \"updatedAt\": \"2025-09-20T04:14:05.161Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ce29b5764a2d8b93e5413a\",\n                \"country\": \"France\",\n                \"location\": \"Paris\",\n                \"startDate\": \"2025-10-10T00:00:00.000Z\",\n                \"endDate\": \"2025-10-20T00:00:00.000Z\",\n                \"participants\": [\n                    \"Alice Johnson\",\n                    \"Bob Smith\",\n                    \"Charlie Davis\"\n                ],\n                \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758341554/File_Uploader/mesut-kaya-eocyhe5-9sq-unsplash.jpg.jpg\",\n                \"createdAt\": \"2025-09-20T04:12:37.521Z\",\n                \"updatedAt\": \"2025-09-20T04:12:37.521Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "single trip",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trip/68ce29b5764a2d8b93e5413a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trip",
+								"68ce29b5764a2d8b93e5413a"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "single trip",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/trip/68ce29b5764a2d8b93e5413a",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"trip",
+										"68ce29b5764a2d8b93e5413a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "503"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f7-dSGt4o/HGpXyU1FqzDd5YP6X+sY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 04:50:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Trip retrieved successfully!\",\n    \"data\": {\n        \"_id\": \"68ce29b5764a2d8b93e5413a\",\n        \"country\": \"France\",\n        \"location\": \"Paris\",\n        \"startDate\": \"2025-10-10T00:00:00.000Z\",\n        \"endDate\": \"2025-10-20T00:00:00.000Z\",\n        \"participants\": [\n            \"Alice Johnson\",\n            \"Bob Smith\",\n            \"Charlie Davis\"\n        ],\n        \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758341554/File_Uploader/mesut-kaya-eocyhe5-9sq-unsplash.jpg.jpg\",\n        \"createdAt\": \"2025-09-20T04:12:37.521Z\",\n        \"updatedAt\": \"2025-09-20T04:12:37.521Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "update trip",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/sarka/Downloads/mesut-kaya-eOcyhe5-9sQ-unsplash.jpg"
+								},
+								{
+									"key": "data",
+									"value": "{\"country\": \"France\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/trip/68ce29b5764a2d8b93e5413a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trip",
+								"68ce29b5764a2d8b93e5413a"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "update trip",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/sarka/Downloads/mesut-kaya-eOcyhe5-9sQ-unsplash.jpg"
+										},
+										{
+											"key": "data",
+											"value": "{\"country\": \"France\"}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/trip/68ce29b5764a2d8b93e5413a",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"trip",
+										"68ce29b5764a2d8b93e5413a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "501"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f5-/ZOS1MN0Xf/xnQafSldR6OUgSrY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 04:53:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Trip updated successfully!\",\n    \"data\": {\n        \"_id\": \"68ce29b5764a2d8b93e5413a\",\n        \"country\": \"France\",\n        \"location\": \"Paris\",\n        \"startDate\": \"2025-10-10T00:00:00.000Z\",\n        \"endDate\": \"2025-10-20T00:00:00.000Z\",\n        \"participants\": [\n            \"Alice Johnson\",\n            \"Bob Smith\",\n            \"Charlie Davis\"\n        ],\n        \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758341554/File_Uploader/mesut-kaya-eocyhe5-9sq-unsplash.jpg.jpg\",\n        \"createdAt\": \"2025-09-20T04:12:37.521Z\",\n        \"updatedAt\": \"2025-09-20T04:53:26.588Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "delete trip",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trip/68ce29b5764a2d8b93e5413a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trip",
+								"68ce29b5764a2d8b93e5413a"
+							]
+						}
 					},
 					"response": []
 				},
@@ -433,7 +2030,7 @@
 			"name": "agent",
 			"item": [
 				{
-					"name": "request agent",
+					"name": "request for agent",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -443,11 +2040,11 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/sarka/Downloads/pexels-wolrider-18380066.jpg"
+									"src": "/C:/Users/Jahidul Islam/Desktop/Image video documents/pexels-creativebin-38994-135940.jpg"
 								},
 								{
 									"key": "data",
-									"value": "{\n    \"fullName\": \"John Doe\",\n    \"phoneNumber\": \"+8801712345678\",\n    \"email\": \"johndoe@gmail.com\",\n    \"country\": \"Bangladesh\",\n    \"designation\": \"Sales Manager\",\n    \"brandName\": \"ABC Travels\",\n    \"workingFrom\": \"2018\"\n}",
+									"value": "{\n    \"fullName\": \"John Doe\",\n    \"phoneNumber\": \"+88017123456788\",\n    \"email\": \"johndoes@gmail.com\",\n    \"country\": \"Bangladesh\",\n    \"designation\": \"Sales Managers\",\n    \"brandName\": \"ABC Travelss\",\n    \"workingFrom\": \"2018\"\n}",
 									"type": "text"
 								}
 							]
@@ -465,7 +2062,7 @@
 					},
 					"response": [
 						{
-							"name": "request agent",
+							"name": "request for agent",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -675,7 +2272,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -754,7 +2351,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -915,71 +2512,43 @@
 				{
 					"name": "delete agent",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Y2JlZTExMzQ0ZTE2MTNmNjhlZTAyNCIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzU4MjczNzkxLCJleHAiOjE3NTg4Nzg1OTF9.bz4BaJxUcfWP0aKTt4q_xlC4sRYkWvdjQZdGlVrpY8I",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/agent/68cbc7e973ea17558f8adb25",
+							"raw": "{{base_url}}/agent/68cbc7af73ea17558f8adb22",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"agent",
-								"68cbc7e973ea17558f8adb25"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "accept or reject agent status",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"status\": \"accepted\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/agent/status/68cbc82573ea17558f8adb2b",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"agent",
-								"status",
-								"68cbc82573ea17558f8adb2b"
+								"68cbc7af73ea17558f8adb22"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "accept or reject agent id",
+							"name": "delete agent",
 							"originalRequest": {
-								"method": "PATCH",
+								"method": "DELETE",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"status\": \"accepted\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "{{base_url}}/agent/status/68cbc82573ea17558f8adb2b",
+									"raw": "{{base_url}}/agent/68cbc7af73ea17558f8adb22",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
 										"agent",
-										"status",
-										"68cbc82573ea17558f8adb2b"
+										"68cbc7af73ea17558f8adb22"
 									]
 								}
 							},
@@ -1005,15 +2574,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "487"
+									"value": "519"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"1e7-RDZXhEu5ViEvb8Esuda3nQ+nd60\""
+									"value": "W/\"207-DbCPQggO8Y4kB3DLW0VidME+WYM\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 18 Sep 2025 09:35:51 GMT"
+									"value": "Fri, 19 Sep 2025 09:56:37 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1025,7 +2594,106 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent status updated successfully\",\n    \"data\": {\n        \"_id\": \"68cbc82573ea17558f8adb2b\",\n        \"fullName\": \"Ayesha Rahman\",\n        \"phoneNumber\": \"+971-50-123-4567\",\n        \"email\": \"ayesha.rahman@example.com\",\n        \"country\": \"UAE\",\n        \"designation\": \"Customer Service Manager\",\n        \"brandName\": \"Desert Adventures\",\n        \"workingFrom\": \"2019\",\n        \"status\": \"accepted\",\n        \"image\": \"https://avatar.iran.liara.run/public/70.png\",\n        \"createdAt\": \"2025-09-18T08:51:49.467Z\",\n        \"updatedAt\": \"2025-09-18T09:35:51.756Z\",\n        \"__v\": 0\n    }\n}"
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent deleted successfully\",\n    \"data\": {\n        \"_id\": \"68cbc7af73ea17558f8adb22\",\n        \"fullName\": \"John Doe\",\n        \"phoneNumber\": \"+8801712345678\",\n        \"email\": \"johndoe@gmail.com\",\n        \"country\": \"Bangladesh\",\n        \"designation\": \"Sales Manager\",\n        \"brandName\": \"ABC Travels\",\n        \"workingFrom\": \"2018\",\n        \"status\": \"pending\",\n        \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1757848908/File_Uploader/pexels-wolrider-18380066.jpg.jpg\",\n        \"createdAt\": \"2025-09-18T08:49:51.107Z\",\n        \"updatedAt\": \"2025-09-18T08:49:51.107Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "accept or reject agent (by admin)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"accepted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/agent/status/68cbc82573ea17558f8adb2b",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"agent",
+								"status",
+								"68cbc82573ea17558f8adb2b"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "accept or reject agent (by admin)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"accepted\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/agent/status/68cd2880edce368747c71709",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"agent",
+										"status",
+										"68cd2880edce368747c71709"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "538"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21a-P+eDZMhQxabcQrTUuJw9dtckr8U\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Sep 2025 09:57:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent status updated successfully\",\n    \"data\": {\n        \"_id\": \"68cd2880edce368747c71709\",\n        \"fullName\": \"John Doe\",\n        \"phoneNumber\": \"+88017123456788\",\n        \"email\": \"johndoes@gmail.com\",\n        \"country\": \"Bangladesh\",\n        \"designation\": \"Sales Managers\",\n        \"brandName\": \"ABC Travelss\",\n        \"workingFrom\": \"2018\",\n        \"status\": \"accepted\",\n        \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758275712/File_Uploader/pexels-creativebin-38994-135940.jpg.jpg\",\n        \"createdAt\": \"2025-09-19T09:55:12.735Z\",\n        \"updatedAt\": \"2025-09-19T09:57:32.600Z\",\n        \"__v\": 0\n    }\n}"
 						}
 					]
 				}
@@ -1046,13 +2714,13 @@
 									"key": "image",
 									"type": "file",
 									"src": [
-										"/C:/Users/sarka/Downloads/Wislist.png",
-										"/C:/Users/sarka/Downloads/pexels-hamza01nsr-12725055.jpg"
+										"/C:/Users/Jahidul Islam/Desktop/Image video documents/pexels-philippedonn-1133957.jpg",
+										"/C:/Users/Jahidul Islam/Desktop/Image video documents/pexels-pixabay-326055.jpg"
 									]
 								},
 								{
 									"key": "data",
-									"value": "{\n    \"fullName\": \"Saurav Sarkar\",\n    \"phoneNumber\": \"+8801712345678\",\n    \"email\": \"saurav@example.com\",\n    \"bio\": \"Passionate content creator and tech enthusiast.\",\n    \"description\": \"I create videos and blogs about programming, AI, and tech tutorials.\",\n    \"socialMedia\": [\n        {\n            \"platform\": \"YouTube\",\n            \"link\": \"https://www.youtube.com/sauravchannel\"\n        },\n        {\n            \"platform\": \"Instagram\",\n            \"link\": \"https://www.instagram.com/saurav_sarkar\"\n        }\n    ],\n    \"interests\": [\n        \"Technology\",\n        \"AI\",\n        \"Programming\",\n        \"Gaming\"\n    ]\n}",
+									"value": "{\n    \"fullName\": \"JishadKhan\",\n    \"phoneNumber\": \"+88017123456789\",\n    \"email\": \"Jishad@example.com\",\n    \"bio\": \"I am a passionate content creator specializing in tech reviews and tutorials.\",\n    \"description\": \"I create engaging videos on software development, programming tutorials, and product reviews.\",\n    \"socialMedia\": [\n        {\n            \"platform\": \"YouTube\",\n            \"link\": \"https://www.youtube.com/@saurav\",\n            \"followers\": 12000\n        },\n        {\n            \"platform\": \"Instagram\",\n            \"link\": \"https://www.instagram.com/saurav\",\n            \"followers\": 8500\n        },\n        {\n            \"platform\": \"LinkedIn\",\n            \"link\": \"https://www.linkedin.com/in/saurav\",\n            \"followers\": 2300\n        }\n    ],\n    \"interests\": [\n        \"Technology\",\n        \"Programming\",\n        \"Video Editing\",\n        \"AI\"\n    ]\n}",
 									"type": "text"
 								}
 							]
@@ -1076,7 +2744,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"fullName\": \"Tania Hossain\",\r\n    \"phoneNumber\": \"+8801934567890\",\r\n    \"email\": \"tania@example.com\",\r\n    \"bio\": \"Fitness coach and nutrition expert.\",\r\n    \"description\": \"Sharing workout routines and healthy lifestyle tips.\",\r\n    \"socialMedia\": [\r\n        {\r\n            \"platform\": \"Instagram\",\r\n            \"link\": \"https://instagram.com/tania_fitness\"\r\n        },\r\n        {\r\n            \"platform\": \"TikTok\",\r\n            \"link\": \"https://tiktok.com/@tania_hossain\"\r\n        }\r\n    ],\r\n    \"interests\": [\r\n        \"Fitness\",\r\n        \"Health\",\r\n        \"Yoga\",\r\n        \"Nutrition\"\r\n    ]\r\n}",
+									"raw": "{\r\n    \"fullName\": \"Saurav Sarkar\",\r\n    \"phoneNumber\": \"+8801712345678\",\r\n    \"email\": \"saurav1@example.com\",\r\n    \"bio\": \"I am a passionate content creator specializing in tech reviews and tutorials.\",\r\n    \"description\": \"I create engaging videos on software development, programming tutorials, and product reviews.\",\r\n    \"socialMedia\": [\r\n        {\r\n            \"platform\": \"YouTube\",\r\n            \"link\": \"https://www.youtube.com/@saurav\",\r\n            \"followers\": 12000\r\n        },\r\n        {\r\n            \"platform\": \"Instagram\",\r\n            \"link\": \"https://www.instagram.com/saurav\",\r\n            \"followers\": 8500\r\n        },\r\n        {\r\n            \"platform\": \"LinkedIn\",\r\n            \"link\": \"https://www.linkedin.com/in/saurav\",\r\n            \"followers\": 2300\r\n        }\r\n    ],\r\n    \"interests\": [\r\n        \"Technology\",\r\n        \"Programming\",\r\n        \"Video Editing\",\r\n        \"AI\"\r\n    ],\r\n    \"status\": \"pending\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1096,7 +2764,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -1116,15 +2784,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "747"
+									"value": "991"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"2eb-/+EaGRQ/YxCblhubHjDPL8ffiHo\""
+									"value": "W/\"3df-jq6MWaMoKn/nuBHBQ2vYB8xB/PE\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 18 Sep 2025 10:11:56 GMT"
+									"value": "Sat, 20 Sep 2025 03:07:14 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1136,7 +2804,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Creator requested successfully\",\n    \"data\": {\n        \"fullName\": \"Tania Hossain\",\n        \"phoneNumber\": \"+8801934567890\",\n        \"email\": \"tania@example.com\",\n        \"bio\": \"Fitness coach and nutrition expert.\",\n        \"description\": \"Sharing workout routines and healthy lifestyle tips.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"Instagram\",\n                \"link\": \"https://instagram.com/tania_fitness\",\n                \"_id\": \"68cbdaecb36dd8ded5666d4e\"\n            },\n            {\n                \"platform\": \"TikTok\",\n                \"link\": \"https://tiktok.com/@tania_hossain\",\n                \"_id\": \"68cbdaecb36dd8ded5666d4f\"\n            }\n        ],\n        \"interests\": [\n            \"Fitness\",\n            \"Health\",\n            \"Yoga\",\n            \"Nutrition\"\n        ],\n        \"status\": \"pending\",\n        \"image\": [\n            \"https://avatar.iran.liara.run/public/93.png\"\n        ],\n        \"_id\": \"68cbdaecb36dd8ded5666d4d\",\n        \"createdAt\": \"2025-09-18T10:11:56.088Z\",\n        \"updatedAt\": \"2025-09-18T10:11:56.088Z\",\n        \"__v\": 0\n    }\n}"
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Creator requested successfully\",\n    \"data\": {\n        \"fullName\": \"Saurav Sarkar\",\n        \"phoneNumber\": \"+8801712345678\",\n        \"email\": \"saurav1@example.com\",\n        \"bio\": \"I am a passionate content creator specializing in tech reviews and tutorials.\",\n        \"description\": \"I create engaging videos on software development, programming tutorials, and product reviews.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"YouTube\",\n                \"link\": \"https://www.youtube.com/@saurav\",\n                \"followers\": 12000,\n                \"_id\": \"68ce1a629f8d899b3c2f29f0\"\n            },\n            {\n                \"platform\": \"Instagram\",\n                \"link\": \"https://www.instagram.com/saurav\",\n                \"followers\": 8500,\n                \"_id\": \"68ce1a629f8d899b3c2f29f1\"\n            },\n            {\n                \"platform\": \"LinkedIn\",\n                \"link\": \"https://www.linkedin.com/in/saurav\",\n                \"followers\": 2300,\n                \"_id\": \"68ce1a629f8d899b3c2f29f2\"\n            }\n        ],\n        \"interests\": [\n            \"Technology\",\n            \"Programming\",\n            \"Video Editing\",\n            \"AI\"\n        ],\n        \"status\": \"pending\",\n        \"image\": [\n            \"https://avatar.iran.liara.run/public/42.png\"\n        ],\n        \"_id\": \"68ce1a629f8d899b3c2f29ef\",\n        \"createdAt\": \"2025-09-20T03:07:14.514Z\",\n        \"updatedAt\": \"2025-09-20T03:07:14.514Z\",\n        \"__v\": 0\n    }\n}"
 						}
 					]
 				},
@@ -1158,13 +2826,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/creator/",
+							"raw": "{{base_url}}/creator",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"creator",
-								""
+								"creator"
 							],
 							"query": [
 								{
@@ -1193,6 +2860,11 @@
 									"disabled": true
 								},
 								{
+									"key": "status",
+									"value": "accepted",
+									"disabled": true
+								},
+								{
 									"key": "page",
 									"value": "2",
 									"disabled": true
@@ -1211,128 +2883,16 @@
 									"key": "sortOrder",
 									"value": "desc",
 									"disabled": true
+								},
+								{
+									"key": "tier",
+									"value": "top",
+									"disabled": true
 								}
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "all creators",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/creator/",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"creator",
-										""
-									],
-									"query": [
-										{
-											"key": "searchTerm",
-											"value": "health",
-											"disabled": true
-										},
-										{
-											"key": "fullName",
-											"value": "Tania Hossain",
-											"disabled": true
-										},
-										{
-											"key": "email",
-											"value": "rafiq@example.com",
-											"disabled": true
-										},
-										{
-											"key": "interests",
-											"value": "Yoga",
-											"disabled": true
-										},
-										{
-											"key": "status",
-											"value": "pending",
-											"disabled": true
-										},
-										{
-											"key": "page",
-											"value": "2",
-											"disabled": true
-										},
-										{
-											"key": "limit",
-											"value": "2",
-											"disabled": true
-										},
-										{
-											"key": "sortBy",
-											"value": "fullName",
-											"disabled": true
-										},
-										{
-											"key": "sortOrder",
-											"value": "desc",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "2981"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"ba5-UH2PZVIANBmYVbtoUXq/J5nYGWM\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 18 Sep 2025 10:55:29 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Creators retrieved successfully\",\n    \"data\": {\n        \"meta\": {\n            \"page\": 1,\n            \"limit\": 10,\n            \"total\": 4\n        },\n        \"data\": [\n            {\n                \"_id\": \"68cbdaecb36dd8ded5666d4d\",\n                \"fullName\": \"Tania Hossain\",\n                \"phoneNumber\": \"+8801934567890\",\n                \"email\": \"tania@example.com\",\n                \"bio\": \"Fitness coach and nutrition expert.\",\n                \"description\": \"Sharing workout routines and healthy lifestyle tips.\",\n                \"socialMedia\": [\n                    {\n                        \"platform\": \"Instagram\",\n                        \"link\": \"https://instagram.com/tania_fitness\",\n                        \"_id\": \"68cbdaecb36dd8ded5666d4e\"\n                    },\n                    {\n                        \"platform\": \"TikTok\",\n                        \"link\": \"https://tiktok.com/@tania_hossain\",\n                        \"_id\": \"68cbdaecb36dd8ded5666d4f\"\n                    }\n                ],\n                \"interests\": [\n                    \"Fitness\",\n                    \"Health\",\n                    \"Yoga\",\n                    \"Nutrition\"\n                ],\n                \"status\": \"pending\",\n                \"image\": [\n                    \"https://avatar.iran.liara.run/public/93.png\"\n                ],\n                \"createdAt\": \"2025-09-18T10:11:56.088Z\",\n                \"updatedAt\": \"2025-09-18T10:11:56.088Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68cbdad8b36dd8ded5666d48\",\n                \"fullName\": \"Rafiq Ahmed\",\n                \"phoneNumber\": \"+8801765432109\",\n                \"email\": \"rafiq@example.com\",\n                \"bio\": \"Tech reviewer and software developer.\",\n                \"description\": \"I review gadgets, write tutorials, and share coding tips.\",\n                \"socialMedia\": [\n                    {\n                        \"platform\": \"YouTube\",\n                        \"link\": \"https://youtube.com/rafiqtech\",\n                        \"_id\": \"68cbdad8b36dd8ded5666d49\"\n                    },\n                    {\n                        \"platform\": \"LinkedIn\",\n                        \"link\": \"https://linkedin.com/in/rafiqahmed\",\n                        \"_id\": \"68cbdad8b36dd8ded5666d4a\"\n                    }\n                ],\n                \"interests\": [\n                    \"Technology\",\n                    \"Gadgets\",\n                    \"Programming\"\n                ],\n                \"status\": \"pending\",\n                \"image\": [\n                    \"https://avatar.iran.liara.run/public/54.png\"\n                ],\n                \"createdAt\": \"2025-09-18T10:11:36.259Z\",\n                \"updatedAt\": \"2025-09-18T10:11:36.259Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68cbdac1b36dd8ded5666d43\",\n                \"fullName\": \"Anika Rahman\",\n                \"phoneNumber\": \"+8801987654321\",\n                \"email\": \"anika@example.com\",\n                \"bio\": \"Lifestyle vlogger and photographer.\",\n                \"description\": \"I share tips on lifestyle, fashion, and travel.\",\n                \"socialMedia\": [\n                    {\n                        \"platform\": \"Instagram\",\n                        \"link\": \"https://instagram.com/anika_rahman\",\n                        \"_id\": \"68cbdac1b36dd8ded5666d44\"\n                    },\n                    {\n                        \"platform\": \"Facebook\",\n                        \"link\": \"https://facebook.com/anika.rahman\",\n                        \"_id\": \"68cbdac1b36dd8ded5666d45\"\n                    }\n                ],\n                \"interests\": [\n                    \"Fashion\",\n                    \"Photography\",\n                    \"Travel\"\n                ],\n                \"status\": \"pending\",\n                \"image\": [\n                    \"https://avatar.iran.liara.run/public/18.png\"\n                ],\n                \"createdAt\": \"2025-09-18T10:11:13.965Z\",\n                \"updatedAt\": \"2025-09-18T10:11:13.965Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68cbda68b36dd8ded5666d3e\",\n                \"fullName\": \"Saurav Sarkar\",\n                \"phoneNumber\": \"+8801712345678\",\n                \"email\": \"saurav@example.com\",\n                \"bio\": \"Passionate content creator and tech enthusiast.\",\n                \"description\": \"I create videos and blogs about programming, AI, and tech tutorials.\",\n                \"socialMedia\": [\n                    {\n                        \"platform\": \"YouTube\",\n                        \"link\": \"https://www.youtube.com/sauravchannel\",\n                        \"_id\": \"68cbda68b36dd8ded5666d3f\"\n                    },\n                    {\n                        \"platform\": \"Instagram\",\n                        \"link\": \"https://www.instagram.com/saurav_sarkar\",\n                        \"_id\": \"68cbda68b36dd8ded5666d40\"\n                    }\n                ],\n                \"interests\": [\n                    \"Technology\",\n                    \"AI\",\n                    \"Programming\",\n                    \"Gaming\"\n                ],\n                \"status\": \"pending\",\n                \"image\": [\n                    \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758190178/File_Uploader/wislist.png.png\",\n                    \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758190181/File_Uploader/pexels-hamza01nsr-12725055.jpg.jpg\"\n                ],\n                \"createdAt\": \"2025-09-18T10:09:44.638Z\",\n                \"updatedAt\": \"2025-09-18T10:09:44.638Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "single creator",
@@ -1340,13 +2900,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/creator/68cbdad8b36dd8ded5666d48",
+							"raw": "{{base_url}}/creator/68ce332a7e92ac4858a568fe",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"creator",
-								"68cbdad8b36dd8ded5666d48"
+								"68ce332a7e92ac4858a568fe"
 							]
 						}
 					},
@@ -1357,19 +2917,19 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/creator/68cbdad8b36dd8ded5666d48",
+									"raw": "{{base_url}}/creator/68ce332a7e92ac4858a568fe",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
 										"creator",
-										"68cbdad8b36dd8ded5666d48"
+										"68ce332a7e92ac4858a568fe"
 									]
 								}
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -1389,15 +2949,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "746"
+									"value": "1164"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"2ea-NtV9uFiu2ScGpK/JSUHOF9oTOBM\""
+									"value": "W/\"48c-FDtL/fYyyaBzLF2NSJ8/6ER28e4\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 18 Sep 2025 11:07:31 GMT"
+									"value": "Sat, 20 Sep 2025 05:05:29 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1409,7 +2969,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Creator retrieved successfully\",\n    \"data\": {\n        \"_id\": \"68cbdad8b36dd8ded5666d48\",\n        \"fullName\": \"Rafiq Ahmed\",\n        \"phoneNumber\": \"+8801765432109\",\n        \"email\": \"rafiq@example.com\",\n        \"bio\": \"Tech reviewer and software developer.\",\n        \"description\": \"I review gadgets, write tutorials, and share coding tips.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"YouTube\",\n                \"link\": \"https://youtube.com/rafiqtech\",\n                \"_id\": \"68cbdad8b36dd8ded5666d49\"\n            },\n            {\n                \"platform\": \"LinkedIn\",\n                \"link\": \"https://linkedin.com/in/rafiqahmed\",\n                \"_id\": \"68cbdad8b36dd8ded5666d4a\"\n            }\n        ],\n        \"interests\": [\n            \"Technology\",\n            \"Gadgets\",\n            \"Programming\"\n        ],\n        \"status\": \"pending\",\n        \"image\": [\n            \"https://avatar.iran.liara.run/public/54.png\"\n        ],\n        \"createdAt\": \"2025-09-18T10:11:36.259Z\",\n        \"updatedAt\": \"2025-09-18T10:11:36.259Z\",\n        \"__v\": 0\n    }\n}"
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Creator retrieved successfully\",\n    \"data\": {\n        \"_id\": \"68ce332a7e92ac4858a568fe\",\n        \"fullName\": \"JishadKhan\",\n        \"phoneNumber\": \"+88017123456789\",\n        \"email\": \"Jishad@example.com\",\n        \"bio\": \"I am a passionate content creator specializing in tech reviews and tutorials.\",\n        \"description\": \"I create engaging videos on software development, programming tutorials, and product reviews.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"YouTube\",\n                \"link\": \"https://www.youtube.com/@saurav\",\n                \"followers\": 12000,\n                \"_id\": \"68ce332a7e92ac4858a568ff\"\n            },\n            {\n                \"platform\": \"Instagram\",\n                \"link\": \"https://www.instagram.com/saurav\",\n                \"followers\": 8500,\n                \"_id\": \"68ce332a7e92ac4858a56900\"\n            },\n            {\n                \"platform\": \"LinkedIn\",\n                \"link\": \"https://www.linkedin.com/in/saurav\",\n                \"followers\": 2300,\n                \"_id\": \"68ce332a7e92ac4858a56901\"\n            }\n        ],\n        \"interests\": [\n            \"Technology\",\n            \"Programming\",\n            \"Video Editing\",\n            \"AI\"\n        ],\n        \"status\": \"pending\",\n        \"image\": [\n            \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758343974/File_Uploader/pexels-philippedonn-1133957.jpg.jpg\",\n            \"https://res.cloudinary.com/dw5wizivl/image/upload/v1757392197/File_Uploader/pexels-pixabay-326055.jpg.jpg\"\n        ],\n        \"createdAt\": \"2025-09-20T04:52:58.635Z\",\n        \"updatedAt\": \"2025-09-20T04:52:58.635Z\",\n        \"__v\": 0\n    }\n}"
 						}
 					]
 				},
@@ -1536,71 +3096,43 @@
 				{
 					"name": "delete creator",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Y2JlZTExMzQ0ZTE2MTNmNjhlZTAyNCIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzU4MzQ5NjMxLCJleHAiOjE3NTg5NTQ0MzF9.7KxV7md64Mv1uLKCTNnakP3Tlxz1PnN796sqbWfoJpQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/creator/68cbdad8b36dd8ded5666d48",
+							"raw": "{{base_url}}/creator/68cbdaecb36dd8ded5666d4d",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"creator",
-								"68cbdad8b36dd8ded5666d48"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "accept or reject creator by id",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"status\":\"accepted\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/creator/status/68cbdad8b36dd8ded5666d48",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"creator",
-								"status",
-								"68cbdad8b36dd8ded5666d48"
+								"68cbdaecb36dd8ded5666d4d"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "accept or reject creator by id",
+							"name": "delete creator",
 							"originalRequest": {
-								"method": "PATCH",
+								"method": "DELETE",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"status\":\"accepted\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "{{base_url}}/creator/status/68cbdad8b36dd8ded5666d48",
+									"raw": "{{base_url}}/creator/68cbdaecb36dd8ded5666d4d",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
 										"creator",
-										"status",
-										"68cbdad8b36dd8ded5666d48"
+										"68cbdaecb36dd8ded5666d4d"
 									]
 								}
 							},
@@ -1626,15 +3158,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "916"
+									"value": "745"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"394-20fKo+pry7xTb0jxivV7eGnqkx4\""
+									"value": "W/\"2e9-PZqGhTJtIJcEzJdEPoeHf8fjzE0\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 18 Sep 2025 11:16:28 GMT"
+									"value": "Sat, 20 Sep 2025 06:27:55 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1646,7 +3178,116 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent status updated successfully\",\n    \"data\": {\n        \"_id\": \"68cbdad8b36dd8ded5666d48\",\n        \"fullName\": \"Rafiq Ahmed\",\n        \"phoneNumber\": \"+8801765432109\",\n        \"email\": \"rafiq@example.com\",\n        \"bio\": \"Tech reviewer and software developer.\",\n        \"description\": \"I review gadgets, write tutorials, and share coding tips.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"YouTube\",\n                \"link\": \"https://youtube.com/rafiqtech\",\n                \"_id\": \"68cbdad8b36dd8ded5666d49\"\n            },\n            {\n                \"platform\": \"LinkedIn\",\n                \"link\": \"https://linkedin.com/in/rafiqahmed\",\n                \"_id\": \"68cbdad8b36dd8ded5666d4a\"\n            }\n        ],\n        \"interests\": [\n            \"Technology\",\n            \"Gadgets\",\n            \"Programming\"\n        ],\n        \"status\": \"accepted\",\n        \"image\": [\n            \"https://res.cloudinary.com/dw5wizivl/image/upload/v1756877298/File_Uploader/product-1.jpeg.jpg\",\n            \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758193868/File_Uploader/pexels-arturoaez225-13525776.jpg.jpg\"\n        ],\n        \"createdAt\": \"2025-09-18T10:11:36.259Z\",\n        \"updatedAt\": \"2025-09-18T11:16:28.882Z\",\n        \"__v\": 0\n    }\n}"
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Creator deleted successfully\",\n    \"data\": {\n        \"_id\": \"68cbdaecb36dd8ded5666d4d\",\n        \"fullName\": \"Tania Hossain\",\n        \"phoneNumber\": \"+8801934567890\",\n        \"email\": \"tania@example.com\",\n        \"bio\": \"Fitness coach and nutrition expert.\",\n        \"description\": \"Sharing workout routines and healthy lifestyle tips.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"Instagram\",\n                \"link\": \"https://instagram.com/tania_fitness\",\n                \"_id\": \"68cbdaecb36dd8ded5666d4e\"\n            },\n            {\n                \"platform\": \"TikTok\",\n                \"link\": \"https://tiktok.com/@tania_hossain\",\n                \"_id\": \"68cbdaecb36dd8ded5666d4f\"\n            }\n        ],\n        \"interests\": [\n            \"Fitness\",\n            \"Health\",\n            \"Yoga\",\n            \"Nutrition\"\n        ],\n        \"status\": \"pending\",\n        \"image\": [\n            \"https://avatar.iran.liara.run/public/93.png\"\n        ],\n        \"createdAt\": \"2025-09-18T10:11:56.088Z\",\n        \"updatedAt\": \"2025-09-18T10:11:56.088Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "accept or reject creator (by admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Y2JlZTExMzQ0ZTE2MTNmNjhlZTAyNCIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzU4MzQ5NjMxLCJleHAiOjE3NTg5NTQ0MzF9.7KxV7md64Mv1uLKCTNnakP3Tlxz1PnN796sqbWfoJpQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"accepted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/creator/status/68ce332a7e92ac4858a568fe",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"creator",
+								"status",
+								"68ce332a7e92ac4858a568fe"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "accept or reject creator (by admin)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"accepted\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/creator/status/68ce332a7e92ac4858a568fe",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"creator",
+										"status",
+										"68ce332a7e92ac4858a568fe"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1168"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"490-PA3SMsT36wFAhmfyRp0TjKUYj+o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 06:30:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Agent status updated successfully\",\n    \"data\": {\n        \"_id\": \"68ce332a7e92ac4858a568fe\",\n        \"fullName\": \"JishadKhan\",\n        \"phoneNumber\": \"+88017123456789\",\n        \"email\": \"Jishad@example.com\",\n        \"bio\": \"I am a passionate content creator specializing in tech reviews and tutorials.\",\n        \"description\": \"I create engaging videos on software development, programming tutorials, and product reviews.\",\n        \"socialMedia\": [\n            {\n                \"platform\": \"YouTube\",\n                \"link\": \"https://www.youtube.com/@saurav\",\n                \"followers\": 12000,\n                \"_id\": \"68ce332a7e92ac4858a568ff\"\n            },\n            {\n                \"platform\": \"Instagram\",\n                \"link\": \"https://www.instagram.com/saurav\",\n                \"followers\": 8500,\n                \"_id\": \"68ce332a7e92ac4858a56900\"\n            },\n            {\n                \"platform\": \"LinkedIn\",\n                \"link\": \"https://www.linkedin.com/in/saurav\",\n                \"followers\": 2300,\n                \"_id\": \"68ce332a7e92ac4858a56901\"\n            }\n        ],\n        \"interests\": [\n            \"Technology\",\n            \"Programming\",\n            \"Video Editing\",\n            \"AI\"\n        ],\n        \"status\": \"accepted\",\n        \"image\": [\n            \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758343974/File_Uploader/pexels-philippedonn-1133957.jpg.jpg\",\n            \"https://res.cloudinary.com/dw5wizivl/image/upload/v1757392197/File_Uploader/pexels-pixabay-326055.jpg.jpg\"\n        ],\n        \"createdAt\": \"2025-09-20T04:52:58.635Z\",\n        \"updatedAt\": \"2025-09-20T06:30:22.817Z\",\n        \"__v\": 0\n    }\n}"
 						}
 					]
 				},
@@ -1655,6 +3296,487 @@
 					"request": {
 						"method": "GET",
 						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "partnership",
+			"item": [
+				{
+					"name": "create partnership",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/sarka/Downloads/claudio-schwarz-k39RGHmLoV8-unsplash.jpg"
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"title\": \"Cloud Partnership with AWS\",\n    \"description\": \"Using AWS cloud services for scalable infrastructure.\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/partnership/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"partnership",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create partnership",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/sarka/Downloads/claudio-schwarz-k39RGHmLoV8-unsplash.jpg"
+										},
+										{
+											"key": "data",
+											"value": "{\n    \"title\": \"Cloud Partnership with AWS\",\n    \"description\": \"Using AWS cloud services for scalable infrastructure.\"\n}",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/partnership/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"partnership",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "444"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bc-gHw5p75T7VJZZ1qEr2K1O8cUBB4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 06:32:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Partnership created successfully\",\n    \"data\": {\n        \"title\": \"Cloud Partnership with AWS\",\n        \"description\": \"Using AWS cloud services for scalable infrastructure.\",\n        \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758349937/File_Uploader/claudio-schwarz-k39rghmlov8-unsplash.jpg.jpg\",\n        \"_id\": \"68ce4a737f005484969ed053\",\n        \"createdAt\": \"2025-09-20T06:32:19.703Z\",\n        \"updatedAt\": \"2025-09-20T06:32:19.703Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get all Parnerships",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/partnership",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"partnership"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "aws",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "Marketing Partnership with HubSpot",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Joint marketing campaigns and lead generation.",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "title",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all parnership",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/partnership",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"partnership"
+									],
+									"query": [
+										{
+											"key": "searchTerm",
+											"value": "aws",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "Marketing Partnership with HubSpot",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "Joint marketing campaigns and lead generation.",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "title",
+											"disabled": true
+										},
+										{
+											"key": "sortOrder",
+											"value": "desc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1235"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d3-iB1I2bJ8Y95CnODywZA1Iz2hWrY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 06:45:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Partnerships retrieved successfully\",\n    \"data\": {\n        \"meta\": {\n            \"page\": 1,\n            \"limit\": 10,\n            \"total\": 3\n        },\n        \"data\": [\n            {\n                \"_id\": \"68ce4a737f005484969ed053\",\n                \"title\": \"Cloud Partnership with AWS\",\n                \"description\": \"Using AWS cloud services for scalable infrastructure.\",\n                \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758349937/File_Uploader/claudio-schwarz-k39rghmlov8-unsplash.jpg.jpg\",\n                \"createdAt\": \"2025-09-20T06:32:19.703Z\",\n                \"updatedAt\": \"2025-09-20T06:32:19.703Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ce4a447f005484969ed051\",\n                \"title\": \"Marketing Partnership with HubSpot\",\n                \"description\": \"Joint marketing campaigns and lead generation.\",\n                \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758349889/File_Uploader/krakenimages-376kn_isple-unsplash.jpg.jpg\",\n                \"createdAt\": \"2025-09-20T06:31:32.567Z\",\n                \"updatedAt\": \"2025-09-20T06:31:32.567Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ce49c47f005484969ed04f\",\n                \"title\": \"Tech Collaboration with OpenAI\",\n                \"description\": \"A strategic partnership to integrate AI solutions into our platform.\",\n                \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758349762/File_Uploader/sebastian-herrmann-nbtidofkgo8-unsplash.jpg.jpg\",\n                \"createdAt\": \"2025-09-20T06:29:24.703Z\",\n                \"updatedAt\": \"2025-09-20T06:29:24.703Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get single partnership",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/partnership/68ce4a737f005484969ed053",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"partnership",
+								"68ce4a737f005484969ed053"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get single partnership",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/partnership/68ce4a737f005484969ed053",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"partnership",
+										"68ce4a737f005484969ed053"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "446"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1be-NMehyDF0r9+qMXE3fZrZSM/Pysg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 07:02:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Partnership retrieved successfully\",\n    \"data\": {\n        \"_id\": \"68ce4a737f005484969ed053\",\n        \"title\": \"Cloud Partnership with AWS\",\n        \"description\": \"Using AWS cloud services for scalable infrastructure.\",\n        \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758349937/File_Uploader/claudio-schwarz-k39rghmlov8-unsplash.jpg.jpg\",\n        \"createdAt\": \"2025-09-20T06:32:19.703Z\",\n        \"updatedAt\": \"2025-09-20T06:32:19.703Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update partnership",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/sarka/Downloads/krakenimages-376KN_ISplE-unsplash.jpg"
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"title\": \"Marketing Partnership with HubSpots\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/partnership/68ce4a447f005484969ed051",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"partnership",
+								"68ce4a447f005484969ed051"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update partnership",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/sarka/Downloads/krakenimages-376KN_ISplE-unsplash.jpg"
+										},
+										{
+											"key": "data",
+											"value": "{\n    \"title\": \"Marketing Partnership with HubSpots\"\n}",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/partnership/68ce4a447f005484969ed051",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"partnership",
+										"68ce4a447f005484969ed051"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "443"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bb-u3YK9gl8Hb0xI0p055fJMRj9QNU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 07:53:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Partnership updated successfully\",\n    \"data\": {\n        \"_id\": \"68ce4a447f005484969ed051\",\n        \"title\": \"Marketing Partnership with HubSpots\",\n        \"description\": \"Joint marketing campaigns and lead generation.\",\n        \"image\": \"https://res.cloudinary.com/dw5wizivl/image/upload/v1758349889/File_Uploader/krakenimages-376kn_isple-unsplash.jpg.jpg\",\n        \"createdAt\": \"2025-09-20T06:31:32.567Z\",\n        \"updatedAt\": \"2025-09-20T07:53:26.237Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete parnership",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/partnership/68ce4a447f005484969ed051",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"partnership",
+								"68ce4a447f005484969ed051"
+							]
+						}
 					},
 					"response": []
 				}
