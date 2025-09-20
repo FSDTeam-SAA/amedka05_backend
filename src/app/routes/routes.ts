@@ -5,6 +5,7 @@ import { agentRouter } from '../modules/agent/agent.routes';
 import { creatorRouter } from '../modules/creator/creator.routes';
 import { tripsRouter } from '../modules/trips/trips.routes';
 import { partnershipRouter } from '../modules/partnership/partnership.routes';
+import { eventRouter } from '../modules/event/event.routes';
 
 const router = Router();
 
@@ -32,6 +33,10 @@ const moduleRoutes = [
   {
     path: '/partnership',
     route: partnershipRouter,
+  },
+  {
+    path: '/event',
+    route: eventRouter,
   },
 ];
 

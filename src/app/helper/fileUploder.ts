@@ -42,9 +42,9 @@ const upload = multer({
       cb(new AppError(400, 'Only images and videos are allowed'));
     }
   },
-  limits: {
-    fileSize: 50 * 1024 * 1024, // 50MB max
-  },
+  // limits: {
+  //   fileSize: 50 * 1024 * 1024, // 50MB max
+  // },
 });
 
 const uploadToCloudinary = async (
