@@ -7,6 +7,7 @@ export interface ICreator {
   socialMedia?: {
     platform: string;
     link: string;
+    followers?: number;
   }[];
   interests?: string[];
   status?: 'accepted' | 'rejected' | 'pending';
