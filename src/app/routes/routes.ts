@@ -4,6 +4,7 @@ import { authRoutes } from '../modules/auth/auth.routes';
 import { agentRouter } from '../modules/agent/agent.routes';
 import { creatorRouter } from '../modules/creator/creator.routes';
 import { tripsRouter } from '../modules/trips/trips.routes';
+import { partnershipRouter } from '../modules/partnership/partnership.routes';
 
 const router = Router();
 
@@ -27,6 +28,10 @@ const moduleRoutes = [
   {
     path: '/trip',
     route: tripsRouter,
+  },
+  {
+    path: '/partnership',
+    route: partnershipRouter,
   },
 ];
 
