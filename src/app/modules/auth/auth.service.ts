@@ -13,10 +13,8 @@ const registerUser = async (payload: Partial<IUser>) => {
   const exist = await User.findOne({ email: payload.email });
   if (exist) throw new AppError(400, 'User already exists');
 
-
   const idx = Math.floor(Math.random() * 100) + 1;
   payload.profileImage = `https://avatar.iran.liara.run/public/${idx}.png`;
-
 
   const user = await User.create({
     ...payload,
@@ -72,6 +70,7 @@ const refreshToken = async (token: string) => {
   return { accessToken, user: user };
 };
 
+// FORGOT PASSWORD (send OTP)
 const forgotPassword = async (email: string) => {
   const user = await User.findOne({ email });
   if (!user) throw new AppError(401, 'User not found');
@@ -90,24 +89,33 @@ const forgotPassword = async (email: string) => {
   return { message: 'OTP sent to your email' };
 };
 
-const resetPassword = async (
-  email: string,
-  otp: string,
-  newPassword: string,
-) => {
-  const user = await User.findOne({ email }).select('-password');
-  if (!user) throw new AppError(404, 'User not found');
+// VERIFY EMAIL
+const verifiedEmail = async (email: string, otp: string) => {
+  const user = await User.findOne({ email });
+  if (!user) throw new AppError(401, 'User not found');
 
   if (user.otp !== otp || !user.otpExpiry || user.otpExpiry < new Date()) {
     throw new AppError(400, 'Invalid or expired OTP');
   }
 
-  user.password = newPassword;
+  user.verified = true;
   user.otp = undefined;
   user.otpExpiry = undefined;
   await user.save();
 
-  // Auto-login after reset
+  return { message: 'Email verified successfully' };
+};
+
+// RESET PASSWORD DIRECTLY (after forgot-password)
+const resetPasswordChange = async (email: string, newPassword: string) => {
+  const user = await User.findOne({ email });
+  if (!user) throw new AppError(404, 'User not found');
+
+  user.password = newPassword; // bcrypt will hash via pre-save
+  user.otp = undefined;
+  user.otpExpiry = undefined;
+  await user.save();
+
   const accessToken = jwtHelpers.genaretToken(
     { id: user._id, role: user.role, email: user.email },
     config.jwt.accessTokenSecret as Secret,
@@ -119,19 +127,58 @@ const resetPassword = async (
     config.jwt.refreshTokenExpires,
   );
 
-  // const { password, ...userWithoutPassword } = user.toObject();
+  const { password, ...userWithoutPassword } = user.toObject();
   return {
     message: 'Password reset successfully',
     accessToken,
     refreshToken,
-    user: user,
+    user: userWithoutPassword,
   };
 };
+
+// const resetPassword = async (
+//   email: string,
+//   otp: string,
+//   newPassword: string,
+// ) => {
+//   const user = await User.findOne({ email }).select('-password');
+//   if (!user) throw new AppError(404, 'User not found');
+
+//   if (user.otp !== otp || !user.otpExpiry || user.otpExpiry < new Date()) {
+//     throw new AppError(400, 'Invalid or expired OTP');
+//   }
+
+//   user.password = newPassword;
+//   user.otp = undefined;
+//   user.otpExpiry = undefined;
+//   await user.save();
+
+//   // Auto-login after reset
+//   const accessToken = jwtHelpers.genaretToken(
+//     { id: user._id, role: user.role, email: user.email },
+//     config.jwt.accessTokenSecret as Secret,
+//     config.jwt.accessTokenExpires,
+//   );
+//   const refreshToken = jwtHelpers.genaretToken(
+//     { id: user._id, role: user.role, email: user.email },
+//     config.jwt.refreshTokenSecret as Secret,
+//     config.jwt.refreshTokenExpires,
+//   );
+
+//   // const { password, ...userWithoutPassword } = user.toObject();
+//   return {
+//     message: 'Password reset successfully',
+//     accessToken,
+//     refreshToken,
+//     user: user,
+//   };
+// };
 
 export const authService = {
   registerUser,
   loginUser,
   refreshToken,
   forgotPassword,
-  resetPassword,
+  verifiedEmail,
+  resetPasswordChange
 };

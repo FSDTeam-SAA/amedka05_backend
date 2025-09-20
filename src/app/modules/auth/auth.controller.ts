@@ -4,8 +4,13 @@ import sendResponse from '../../utils/sendResponse';
 import { authService } from './auth.service';
 
 const registerUser = catchAsync(async (req, res) => {
-  const { firstName,lastName, email, password } = req.body;
-  const result = await authService.registerUser({ firstName, lastName, email, password });
+  const { firstName, lastName, email, password } = req.body;
+  const result = await authService.registerUser({
+    firstName,
+    lastName,
+    email,
+    password,
+  });
 
   sendResponse(res, {
     statusCode: 201,
@@ -14,8 +19,6 @@ const registerUser = catchAsync(async (req, res) => {
     data: result,
   });
 });
-
-
 
 const loginUser = catchAsync(async (req, res) => {
   const { email, password } = req.body;
@@ -62,27 +65,27 @@ const forgotPassword = catchAsync(async (req, res) => {
   });
 });
 
-const resetPassword = catchAsync(async (req, res) => {
-  const { email, otp, newPassword } = req.body;
-  const result = await authService.resetPassword(email, otp, newPassword);
+// const resetPassword = catchAsync(async (req, res) => {
+//   const { email, otp, newPassword } = req.body;
+//   const result = await authService.resetPassword(email, otp, newPassword);
 
-  // Set the new refreshToken in cookie
-  res.cookie('refreshToken', result.refreshToken, {
-    httpOnly: true,
-    secure: config.env === 'production',
-    // sameSite: 'strict',
-  });
+//   // Set the new refreshToken in cookie
+//   res.cookie('refreshToken', result.refreshToken, {
+//     httpOnly: true,
+//     secure: config.env === 'production',
+//     // sameSite: 'strict',
+//   });
 
-  sendResponse(res, {
-    statusCode: 200,
-    success: true,
-    message: 'Password reset successfully',
-    data: {
-      accessToken: result.accessToken,
-      user: result.user,
-    },
-  });
-});
+//   sendResponse(res, {
+//     statusCode: 200,
+//     success: true,
+//     message: 'Password reset successfully',
+//     data: {
+//       accessToken: result.accessToken,
+//       user: result.user,
+//     },
+//   });
+// });
 
 const logoutUser = catchAsync(async (req, res) => {
   res.clearCookie('refreshToken');
@@ -93,11 +96,37 @@ const logoutUser = catchAsync(async (req, res) => {
   });
 });
 
+const verifiedEmail = catchAsync(async (req, res) => {
+  const { email, otp } = req.body;
+  const result = await authService.verifiedEmail(email, otp);
+
+  sendResponse(res, {
+    statusCode: 200,
+    success: true,
+    message: 'Email verified successfully',
+    data: result,
+  });
+});
+
+const resetPasswordChange = catchAsync(async (req, res) => {
+  const { email, newPassword } = req.body;
+  const result = await authService.resetPasswordChange(email, newPassword);
+
+  sendResponse(res, {
+    statusCode: 200,
+    success: true,
+    message: 'Password reset successfully',
+    data: result,
+  });
+});
+
 export const authController = {
   registerUser,
   loginUser,
   refreshToken,
   forgotPassword,
-  resetPassword,
+  // resetPassword,
   logoutUser,
+  verifiedEmail,
+  resetPasswordChange
 };
