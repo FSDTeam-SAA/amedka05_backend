@@ -6,6 +6,7 @@ import { creatorRouter } from '../modules/creator/creator.routes';
 import { tripsRouter } from '../modules/trips/trips.routes';
 import { partnershipRouter } from '../modules/partnership/partnership.routes';
 import { eventRouter } from '../modules/event/event.routes';
+import { contactRouter } from '../modules/contact/contact.routes';
 
 const router = Router();
 
@@ -37,6 +38,10 @@ const moduleRoutes = [
   {
     path: '/event',
     route: eventRouter,
+  },
+  {
+    path: '/contact',
+    route: contactRouter,
   },
 ];
 
