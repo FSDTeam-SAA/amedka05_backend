@@ -7,6 +7,7 @@ import { tripsRouter } from '../modules/trips/trips.routes';
 import { partnershipRouter } from '../modules/partnership/partnership.routes';
 import { eventRouter } from '../modules/event/event.routes';
 import { contactRouter } from '../modules/contact/contact.routes';
+import { settingRouter } from '../modules/setting/setting.routes';
 
 const router = Router();
 
@@ -42,6 +43,10 @@ const moduleRoutes = [
   {
     path: '/contact',
     route: contactRouter,
+  },
+  {
+    path: '/setting',
+    route: settingRouter,
   },
 ];
 
