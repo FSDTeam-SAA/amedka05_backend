@@ -152,12 +152,83 @@ const activeCreatorsAgent = async (
 
 const trips = async () => {};
 
+
+
 const contactReport = async () => {
-  const contacts = await Contact.find().countDocuments();
+  const currentYear = new Date().getFullYear();
+  const lastYear = currentYear - 1;
+
+  // Helper: month names
+  const monthNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+
+  // Function to get yearly monthly trend
+  const getYearlyTrend = async (year: number) => {
+    const data = await Contact.aggregate([
+      {
+        $match: {
+          createdAt: {
+            $gte: new Date(`${year}-01-01`),
+            $lt: new Date(`${year + 1}-01-01`),
+          },
+        },
+      },
+      {
+        $group: {
+          _id: { month: { $month: '$createdAt' } },
+          count: { $sum: 1 },
+        },
+      },
+    ]);
+
+    // fill missing months with 0
+    const monthlyReport = monthNames.map((name, index) => {
+      const found = data.find((d) => d._id.month === index + 1);
+      return {
+        month: name,
+        count: found ? found.count : 0,
+      };
+    });
+
+    return monthlyReport;
+  };
+
+  // yearly totals
+  const totalContacts = await Contact.countDocuments();
+  const creatorCount = await Contact.countDocuments({
+    selectOption: 'creator',
+  });
+  const agentCount = await Contact.countDocuments({ selectOption: 'agent' });
+
+  const thisYearTrend = await getYearlyTrend(currentYear);
+  const lastYearTrend = await getYearlyTrend(lastYear);
 
   return {
-    contacts,
-    trips,
+    summary: {
+      totalContacts,
+      creatorCount,
+      agentCount,
+    },
+    thisYear: {
+      year: currentYear,
+      trend: thisYearTrend,
+    },
+    lastYear: {
+      year: lastYear,
+      trend: lastYearTrend,
+    },
   };
 };
 
