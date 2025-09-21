@@ -8,6 +8,7 @@ import { partnershipRouter } from '../modules/partnership/partnership.routes';
 import { eventRouter } from '../modules/event/event.routes';
 import { contactRouter } from '../modules/contact/contact.routes';
 import { settingRouter } from '../modules/setting/setting.routes';
+import { dashboardRouter } from '../modules/dashboard/deshboard.routes';
 
 const router = Router();
 
@@ -47,6 +48,10 @@ const moduleRoutes = [
   {
     path: '/setting',
     route: settingRouter,
+  },
+  {
+    path: '/dashboard',
+    route: dashboardRouter,
   },
 ];
 
