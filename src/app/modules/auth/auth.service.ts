@@ -67,7 +67,7 @@ const refreshToken = async (token: string) => {
     config.jwt.accessTokenExpires,
   );
 
-  return { accessToken, user: user };
+  return { accessToken};
 };
 
 // FORGOT PASSWORD (send OTP)
