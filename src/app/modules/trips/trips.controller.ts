@@ -25,6 +25,7 @@ const getAllTrips = catchAsync(async (req, res) => {
   ]);
   const options = pick(req.query, ['limit', 'page', 'sortBy', 'sortOrder']);
   const result = await tripsService.getAllTrips(filters, options);
+  console.log(result)
   sendResponse(res, {
     statusCode: 200,
     success: true,

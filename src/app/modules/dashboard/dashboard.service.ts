@@ -150,7 +150,10 @@ const activeCreatorsAgent = async (
   return { creators: creatorsRaw, agents: agentsRaw };
 };
 
-const trips = async () => {};
+const trips = async () => {
+  const trips = await Trips.find();
+  return trips;
+};
 
 
 
