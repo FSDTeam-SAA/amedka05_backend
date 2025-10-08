@@ -6,7 +6,7 @@ import { eventService } from './event.service';
 const createEvent = catchAsync(async (req, res) => {
   const video = req.file;
   const payload = {
-    url: req.body.url, // string আসবে
+    ...req.body, // string আসবে
   };
   const result = await eventService.createEvent(payload, video);
   sendResponse(res, {
@@ -43,7 +43,7 @@ const updateEvent = catchAsync(async (req, res) => {
   const { id } = req.params;
   const video = req.file;
   const payload = {
-    url: req.body.url, // string আসবে
+    ...req.body, // string আসবে
   };
   const result = await eventService.updateEvent(id, payload, video);
   sendResponse(res, {

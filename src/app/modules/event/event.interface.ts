@@ -1,4 +1,4 @@
 export interface IEvent {
-  url?: string;
+  // url?: string;
   video?: string;
 }
