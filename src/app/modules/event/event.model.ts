@@ -3,7 +3,7 @@ import { IEvent } from './event.interface';
 
 const eventSchema = new mongoose.Schema<IEvent>(
   {
-    url: String,
+    // url: String,
     video: String,
   },
   { timestamps: true },

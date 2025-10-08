@@ -8,6 +8,10 @@ const createEvent = async (payload: IEvent, video?: Express.Multer.File) => {
   if (video) {
     const videoUpload = await fileUploader.uploadToCloudinary(video);
     payload.video = videoUpload.secure_url;
+  } else if (payload.video && payload.video.startsWith('https://')) {
+    // Handle case where video is a URL
+  } else {
+    throw new AppError(400, 'Video is required');
   }
   const result = await Event.create(payload);
   if (!result) throw new AppError(400, 'Event creation failed');
@@ -46,6 +50,8 @@ const updateEvent = async (
   if (video) {
     const videoUpload = await fileUploader.uploadToCloudinary(video);
     payload.video = videoUpload.secure_url;
+  } else if (payload.video && payload.video.startsWith('https://')) {
+    // Handle case where video is a URL
   }
   const result = await Event.findByIdAndUpdate(id, payload, { new: true });
   if (!result) throw new AppError(404, 'Event not found');
