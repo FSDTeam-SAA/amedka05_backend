@@ -9,6 +9,7 @@ import { eventRouter } from '../modules/event/event.routes';
 import { contactRouter } from '../modules/contact/contact.routes';
 import { settingRouter } from '../modules/setting/setting.routes';
 import { dashboardRouter } from '../modules/dashboard/deshboard.routes';
+import { newsletterRouter } from '../modules/newsletter/newsletter.routes';
 
 const router = Router();
 
@@ -52,6 +53,10 @@ const moduleRoutes = [
   {
     path: '/dashboard',
     route: dashboardRouter,
+  },
+  {
+    path: '/newsletter',
+    route: newsletterRouter,
   },
 ];
 
